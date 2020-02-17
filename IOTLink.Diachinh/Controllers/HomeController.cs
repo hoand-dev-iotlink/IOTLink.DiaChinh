@@ -15,6 +15,7 @@ namespace IOTLink.Diachinh.Controllers
         private GdalUtilities gdalUtilities = new GdalUtilities();
         public ActionResult Index()
         {
+
             //BSUserInfor ui = (BSUserInfor)Session["BSUserInfor"];
             //ListHuyenXaNguoiDungModel HuyenND = new ListHuyenXaNguoiDungModel()
             //{
