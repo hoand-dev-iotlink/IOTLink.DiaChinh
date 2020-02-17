@@ -1,0 +1,40 @@
+﻿<div class="modal" id="textfileModal" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header" style="padding-bottom:0;">
+                <h4 class="modal-title">Nhập dữ liệu từ textfile</h4>
+                <button type="button" id="close-modal" class="close close-modal-importfile">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div class="row form-group">
+                    <label class="control-label col-md-3 col-xs-12 required">TextFile</label>
+                    <div class="col-md-9 col-xs-12">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="custom-file-upload" id="custom-file-upload-1">
+                                    <input hidden="hidden" id="Files-1" name="Files" type="file" value="" data-id="1" accept=".geojson, .json, .txt">
+                                    Chọn tệp...
+                                </label>
+                                <div>Các định dạng được phép chọn: <strong> .txt, .json, .geojson</strong></div>
+                                <div class="fileUpLoadError text-danger" id="fileUpLoadError"></div>
+                                <div class="fileNames" style="margin-top: 10px;font-weight: 600;font-style: italic;"></div>.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default close-modal-importfile">Thoát</button>
+                <button type="button" id="btn-upload-file" class="btn btn-primary">Lưu lại</button>
+            </div>
+
+        </div>
+    </div>
+</div>

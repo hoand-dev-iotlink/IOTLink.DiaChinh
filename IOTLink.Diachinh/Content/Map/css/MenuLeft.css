@@ -1,0 +1,189 @@
+﻿#load-menu-left-thua-dat::-webkit-scrollbar {
+    width: 6px;
+    background-color: #F5F5F5;
+}
+
+#load-menu-left-thua-dat::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+@-moz-document url-prefix() {
+    #load-menu-left-thua-dat {
+        font-size: 13px;
+    }
+
+    .has-children-child > a {
+        font-size: 13px!important;
+    }
+}
+
+@supports(-ms-ime-align: auto) {
+    #load-menu-left-thua-dat {
+        font-size: 13px;
+    }
+
+    .has-children-child > a {
+        font-size: 13px !important;
+    }
+}
+
+.sidebar-collapse > div > aside > section > div > span {
+    display : none;
+}
+
+.sidebar-collapse > div > aside > section > ul {
+    overflow: inherit !important;
+}
+
+ul#load-menu-left-thua-dat {
+    height: calc(100vh - 113px);
+    overflow: auto;
+}
+
+.menu-district {
+    position: absolute;
+    background: #fff;
+    height: calc(100% - 10px);
+    top: 0px;
+    width: 230px;
+    left: 0px;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    z-index: 1040;
+    overflow: hidden;
+}
+
+    .menu-district.close-menu {
+        left: -230px;
+        animation: close-menu 1.8s cubic-bezier(0.0, 0.0, 0.2, 1);
+    }
+
+@keyframes close-menu {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -230px;
+    }
+}
+
+.menu-district.open-menu {
+    left: 0px;
+    animation: open-menu 1.8s cubic-bezier(0.0, 0.0, 0.2, 1);
+}
+
+@keyframes open-menu {
+    from {
+        left: -230px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+.mapObject.defective {
+    width: calc(100% - 0px);
+    /*animation: defective-map 1.0s cubic-bezier(0.0, 0.0, 0.2, 1);*/
+}
+
+@keyframes defective-map {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: calc(100% - 230px);
+    }
+}
+
+.mapObject.full {
+    width: calc(100%);
+    /*animation: full-map 1.0s cubic-bezier(0.0, 0.0, 0.2, 1);*/
+}
+
+@keyframes full-map {
+    from {
+        width: calc(100% - 230px);
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+.noiDung2 {
+    flex-direction: column;
+    padding: 0px 5px;
+    display: flex;
+    overflow: auto;
+}
+
+#scrollbar::-webkit-scrollbar {
+    width: 4px;
+    background-color: #F5F5F5;
+}
+
+#scrollbar::-webkit-scrollbar-thumb {
+    background-color: #000000;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.input-checkbox {
+    visibility: hidden;
+}
+
+ul.cd-accordion-menu.animated, .cd-accordion-menu-child {
+    padding-inline-start: 0px;
+}
+
+#label-menu-left {
+    width: calc(100% - 20px);
+}
+
+.cd-accordion-menu-child {
+    background: #EFF0F2;
+}
+
+    .cd-accordion-menu-child > li {
+        line-height: 25px;
+        border-bottom: 1px solid #FFFFFF;
+    }
+
+        .cd-accordion-menu-child > li > label {
+            color: #000;
+            padding-left: 25px;
+        }
+
+#show-sidebar {
+    position: fixed;
+    background-color: #fcfcfc;
+    bottom: 35px;
+    z-index: 990;
+}
+
+.show {
+    display: block !important;
+    z-index: 990 !important;
+}
+
+.children-selected > a > span > i {
+    transform: rotate(-90deg);
+}
+
+ul.tree-view-menu-to {
+    padding-inline-start: 20px;
+}
+
+li.has-children-child-tothua:hover {
+    background-color: #3c8dbc;
+}
+
+.treeview-menu {
+    padding-left: 9px;
+}

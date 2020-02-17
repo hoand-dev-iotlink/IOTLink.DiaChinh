@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+          asp-fallback-href="~/Content/Map/lib/bootstrap/dist/css/bootstrap.min.css"
+          asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+    <link href="~/Content/Map/lib/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Map/lib/AdminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Content/Map/lib/AdminLTE/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <link href="~/Content/Map/lib/AdminLTE/iCheck/flat/_all.css" rel="stylesheet" />
+    <link href="~/Content/Map/css/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/Map/css/select2.css" rel="stylesheet" />
+    <link href="~/Content/Map/css/Common.css" rel="stylesheet" />
+    @RenderSection("Stylesheet", required: false)
+</head>
+
+<body>
+    <div class="wrapper">
+        @Html.Partial("_MenuPartial")
+        <div class="content-wrapper">
+            <section class="content container-fluid">
+                @RenderBody()
+            </section>
+            <!-- /.content -->
+        </div>
+    </div>
+    <script src="~/Content/Map/lib/jquery/dist/jquery.js"></script>
+    <script src="~/Content/Map/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/Content/Map/lib/AdminLTE/dist/js/adminlte.min.js"></script>
+    <script src="~/Content/Map/js/jquery-ui.min.js"></script>
+<script src="~/Content/Map/js/select2.js"></script>
+    <script src="~/Content/Map/js/bootbox.min.js"></script>
+    <script src="~/Content/Map/js/jsCheckInput.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

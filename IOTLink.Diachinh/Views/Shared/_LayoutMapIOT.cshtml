@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Hệ thống thông tin đất đai quốc gia - FIOLIS</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/Content/Map/lib/bootstrap/dist/css/bootstrap.css">
+    <link href="~/Content/Map/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/Map/lib/AdminLTE/dist/css/AdminLTE.min.css" rel="stylesheet" />
+    <link href="~/Content/Map/lib/AdminLTE/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    @RenderSection("Stylesheet", required: false)
+</head>
+<body class="hold-transition skin-black-light sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Index")" class="logo" style="height:54px;">
+                <span class="logo-mini"><b>IOTL</b></span>
+                <span class="logo-lg"><b>IOTLINK</b></span>
+            </a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only"></span>
+                    <span class="logo-mini " style="font-family:'Times New Roman', Times, serif; font-size:16px;"> &nbsp; &nbsp; Hệ thống thông tin đất đai</span>
+                </a>
+                @*<div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown messages-menu">
+                            <a href="~/Home/Index" class="fa fa-home" data-toggle="tooltip" data-placement="bottom" title="Trang chủ"></a>
+                        </li>
+                        <li class="dropdown notifications-menu">
+                            <a href="#" class="fa fa-chain" data-toggle="tooltip" data-placement="bottom" title="Bản đồ"></a>
+                        </li>
+                        <li class="dropdown tasks-menu dvhc_home">
+                            <a href="#" class="tooltipx" data-placement="bottom" title="Đổi đơn vị hành chính làm việc" data-toggle="modal" data-target="#doiDVHC">
+                                <i class="fa fa-building-o"></i>
+                            </a>
+                        </li>
+                        <li class="dropdown user user-menu">
+                            @Html.Partial("_AnhDaiDien")
+                        </li>
+                    </ul>
+                </div>*@
+            </nav>
+        </header>
+        @Html.Partial("_MenuPartial")
+        <div class="content-wrapper">
+            <section class="content container-fluid">
+                @RenderBody()
+            </section>
+        </div>
+    </div>
+    <script src="~/Content/Map/js/jquery.js"></script>
+    <script src="~/Content/Map/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="~/Content/Map/lib/AdminLTE/dist/js/adminlte.min.js"></script>
+    <script src="~/Content/Map/js/jquery-ui-1.11.4.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <!--End Thông tin cá nhân-->
+    @*<div class="container" id="genChonDonViHanhChinhdlg">
+        @Html.Action("genChonDonViHanhChinh", "Home")
+    </div>*@
+</body>
+</html>

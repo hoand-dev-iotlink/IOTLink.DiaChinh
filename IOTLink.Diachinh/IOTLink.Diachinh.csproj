@@ -1,0 +1,2048 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{14FCE407-2CEC-447D-B136-B08FBFDE3AE0}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IOTLink.Diachinh</RootNamespace>
+    <AssemblyName>IOTLink.Diachinh</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aspose.Words">
+      <HintPath>..\packages\Module\Aspose.Words.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper">
+      <HintPath>..\packages\Module\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetZip, Version=1.13.4.0, Culture=neutral, PublicKeyToken=6583c7c814667745, processorArchitecture=MSIL">
+      <HintPath>..\packages\DotNetZip.1.13.4\lib\net40\DotNetZip.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\Module\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\Module\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.GIS">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.GIS.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.LuanChuyenHoSo">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.LuanChuyenHoSo.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.QuanTriQuyTrinh">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.QuanTriQuyTrinh.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.SSO">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.SSO.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.TiepNhanHoSo">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.TiepNhanHoSo.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Data.XuLyHoSo">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Data.XuLyHoSo.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Services.AutoMapperStartup">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Services.AutoMapperStartup.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Libraries.Services.XuLyHoSo">
+      <HintPath>..\packages\Module\FTILIS.Libraries.Services.XuLyHoSo.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Modules.WebGIS">
+      <HintPath>..\packages\Module\FTILIS.Modules.WebGIS.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Services.Library">
+      <HintPath>..\packages\Module\FTILIS.Services.Library.dll</HintPath>
+    </Reference>
+    <Reference Include="FTILIS.Web.FrameWork">
+      <HintPath>..\packages\Module\FTILIS.Web.FrameWork.dll</HintPath>
+    </Reference>
+    <Reference Include="gdalconst_csharp, Version=1.0.7127.27225, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <HintPath>..\packages\GDAL.2.4.2\lib\net40\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp, Version=1.0.7127.27225, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <HintPath>..\packages\GDAL.2.4.2\lib\net40\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GeoAPI, Version=1.7.4.0, Culture=neutral, PublicKeyToken=a1a0da7def465678, processorArchitecture=MSIL">
+      <HintPath>..\packages\GeoAPI.1.7.4\lib\net45\GeoAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\packages\Module\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.1.14\lib\net45\NetTopologySuite.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.GeoTools, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.GeoTools.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.MsSqlSpatial, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.MsSqlSpatial.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.PostGis, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.PostGis.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.ShapeFile, Version=1.14.0.0, Culture=neutral, PublicKeyToken=f580a05016ebada1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.ShapeFile.dll</HintPath>
+    </Reference>
+    <Reference Include="NetTopologySuite.IO.ShapeFile.Extended, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\NetTopologySuite.IO.1.14.0.1\lib\net45\NetTopologySuite.IO.ShapeFile.Extended.dll</HintPath>
+    </Reference>
+    <Reference Include="ogr_csharp, Version=1.0.7127.27224, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <HintPath>..\packages\GDAL.2.4.2\lib\net40\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess">
+      <HintPath>..\packages\Module\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework">
+      <HintPath>..\packages\Module\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp, Version=1.0.7127.27224, Culture=neutral, PublicKeyToken=db5a52b08dc5b321, processorArchitecture=MSIL">
+      <HintPath>..\packages\GDAL.2.4.2\lib\net40\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjNET, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a1f5bdcd9c6f5740, processorArchitecture=MSIL">
+      <HintPath>..\packages\ProjNET.2.0.0\lib\netstandard2.0\ProjNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.4.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Module\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="GdalConfiguration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ExportFileViewModel.cs" />
+    <Compile Include="Models\ListHuyenXaNguoiDungModel.cs" />
+    <Compile Include="Models\ShapeJsonViewModel.cs" />
+    <Compile Include="Models\TrichLucModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sevice\GdalUtilities.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\FileServer\DiaChinh\86\86855\8685529542\29542_24_140.svg" />
+    <Content Include="App_Data\FileServer\DiaChinh\86\86855\8685529542\29542_24_172.svg" />
+    <Content Include="App_Data\gdal\data\bag_template.xml" />
+    <Content Include="App_Data\gdal\data\gdalicon.png" />
+    <Content Include="App_Data\gdal\data\GDALLogoBW.svg" />
+    <Content Include="App_Data\gdal\data\GDALLogoColor.svg" />
+    <Content Include="App_Data\gdal\data\GDALLogoGS.svg" />
+    <Content Include="App_Data\gdal\data\gmlasconf.xml" />
+    <Content Include="App_Data\gdal\data\gml_registry.xml" />
+    <Content Include="App_Data\gdal\data\nitf_spec.xml" />
+    <Content Include="App_Data\gdal\data\pci_datum.txt" />
+    <Content Include="App_Data\gdal\data\pci_ellips.txt" />
+    <Content Include="App_Data\gdal\data\pds4_template.xml" />
+    <Content Include="App_Data\gdal\data\vdv452.xml" />
+    <Content Include="App_Data\gdal\license.txt" />
+    <Content Include="App_Data\gdal\share\nad.lst" />
+    <Content Include="App_Data\gdal\x64\expat.dll" />
+    <Content Include="App_Data\gdal\x64\freexl.dll" />
+    <Content Include="App_Data\gdal\x64\gdal111.dll" />
+    <Content Include="App_Data\gdal\x64\gdal204.dll" />
+    <Content Include="App_Data\gdal\x64\gdalconst_wrap.dll" />
+    <Content Include="App_Data\gdal\x64\gdal_wrap.dll" />
+    <Content Include="App_Data\gdal\x64\geos.dll" />
+    <Content Include="App_Data\gdal\x64\geos_c.dll" />
+    <Content Include="App_Data\gdal\x64\iconv.dll" />
+    <Content Include="App_Data\gdal\x64\libcurl.dll" />
+    <Content Include="App_Data\gdal\x64\libeay32.dll" />
+    <Content Include="App_Data\gdal\x64\libexpat.dll" />
+    <Content Include="App_Data\gdal\x64\libmysql.dll" />
+    <Content Include="App_Data\gdal\x64\libpq.dll" />
+    <Content Include="App_Data\gdal\x64\libxml2.dll" />
+    <Content Include="App_Data\gdal\x64\msvcp100.dll" />
+    <Content Include="App_Data\gdal\x64\msvcp140.dll" />
+    <Content Include="App_Data\gdal\x64\msvcr100.dll" />
+    <Content Include="App_Data\gdal\x64\ogr_wrap.dll" />
+    <Content Include="App_Data\gdal\x64\openjp2.dll" />
+    <Content Include="App_Data\gdal\x64\osr_wrap.dll" />
+    <Content Include="App_Data\gdal\x64\proj.dll" />
+    <Content Include="App_Data\gdal\x64\spatialite.dll" />
+    <Content Include="App_Data\gdal\x64\sqlite3.dll" />
+    <Content Include="App_Data\gdal\x64\ssleay32.dll" />
+    <Content Include="App_Data\gdal\x64\vcruntime140.dll" />
+    <Content Include="App_Data\gdal\x64\xerces-c_2_8.dll" />
+    <Content Include="App_Data\gdal\x64\xerces-c_3_2.dll" />
+    <Content Include="App_Data\gdal\x64\zlib1.dll" />
+    <Content Include="App_Data\gdal\x86\expat.dll" />
+    <Content Include="App_Data\gdal\x86\freexl.dll" />
+    <Content Include="App_Data\gdal\x86\gdal111.dll" />
+    <Content Include="App_Data\gdal\x86\gdal204.dll" />
+    <Content Include="App_Data\gdal\x86\gdalconst_wrap.dll" />
+    <Content Include="App_Data\gdal\x86\gdal_wrap.dll" />
+    <Content Include="App_Data\gdal\x86\geos.dll" />
+    <Content Include="App_Data\gdal\x86\geos_c.dll" />
+    <Content Include="App_Data\gdal\x86\iconv.dll" />
+    <Content Include="App_Data\gdal\x86\libcurl.dll" />
+    <Content Include="App_Data\gdal\x86\libeay32.dll" />
+    <Content Include="App_Data\gdal\x86\libexpat.dll" />
+    <Content Include="App_Data\gdal\x86\libmysql.dll" />
+    <Content Include="App_Data\gdal\x86\libpq.dll" />
+    <Content Include="App_Data\gdal\x86\libxml2.dll" />
+    <Content Include="App_Data\gdal\x86\msvcp100.dll" />
+    <Content Include="App_Data\gdal\x86\msvcp140.dll" />
+    <Content Include="App_Data\gdal\x86\msvcr100.dll" />
+    <Content Include="App_Data\gdal\x86\ogr_wrap.dll" />
+    <Content Include="App_Data\gdal\x86\openjp2.dll" />
+    <Content Include="App_Data\gdal\x86\osr_wrap.dll" />
+    <Content Include="App_Data\gdal\x86\proj.dll" />
+    <Content Include="App_Data\gdal\x86\spatialite.dll" />
+    <Content Include="App_Data\gdal\x86\sqlite3.dll" />
+    <Content Include="App_Data\gdal\x86\ssleay32.dll" />
+    <Content Include="App_Data\gdal\x86\vcruntime140.dll" />
+    <Content Include="App_Data\gdal\x86\xerces-c_2_8.dll" />
+    <Content Include="App_Data\gdal\x86\xerces-c_3_2.dll" />
+    <Content Include="App_Data\gdal\x86\zlib1.dll" />
+    <Content Include="App_Data\Mau\Aspose.Cells.dll" />
+    <Content Include="App_Data\Mau\Aspose.Words.dll" />
+    <Content Include="App_Data\Mau\Bac.png" />
+    <Content Include="App_Data\Mau\imagepng.png" />
+    <Content Include="App_Data\Mau\jpg.jpg" />
+    <Content Include="App_Data\Mau\png1.png" />
+    <Content Include="App_Data\Mau\test.emf" />
+    <Content Include="App_Data\Mau\test.png" />
+    <Content Include="App_Data\Mau\test.svg" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Map\css\ChuGiai.css" />
+    <Content Include="Content\Map\css\Common.css" />
+    <Content Include="Content\Map\css\DetailObjectProperties.css" />
+    <Content Include="Content\Map\css\Extra.css" />
+    <Content Include="Content\Map\css\Home.css" />
+    <Content Include="Content\Map\css\ImportFile.css" />
+    <Content Include="Content\Map\css\jquery-ui.css" />
+    <Content Include="Content\Map\css\jquery-ui.min.css" />
+    <Content Include="Content\Map\css\jquery-ui.structure.css" />
+    <Content Include="Content\Map\css\jquery-ui.structure.min.css" />
+    <Content Include="Content\Map\css\jquery-ui.theme.css" />
+    <Content Include="Content\Map\css\jquery-ui.theme.min.css" />
+    <Content Include="Content\Map\css\mapcontrol.css" />
+    <Content Include="Content\Map\css\MenuLeft.css" />
+    <Content Include="Content\Map\css\select2.css" />
+    <Content Include="Content\fileinput.css" />
+    <Content Include="Content\fileinput.min.css" />
+    <Content Include="Content\Map\images\btn-down.png" />
+    <Content Include="Content\Map\images\btn-left.png" />
+    <Content Include="Content\Map\images\btn-right.png" />
+    <Content Include="Content\Map\images\btn-up.png" />
+    <Content Include="Content\Map\images\GiaoHoi\ghcachduongthang.png" />
+    <Content Include="Content\Map\images\GiaoHoi\ghdoctheocanh.png" />
+    <Content Include="Content\Map\images\GiaoHoi\ghhuong.png" />
+    <Content Include="Content\Map\images\GiaoHoi\ghthuan.png" />
+    <Content Include="Content\Map\images\GiaoHoi\GiaoHoiNghich_3DiemGoc.png" />
+    <Content Include="Content\Map\images\iconPoint.png" />
+    <Content Include="Content\Map\images\iconPoint_1.png" />
+    <Content Include="Content\Map\images\iconPoint_2.png" />
+    <Content Include="Content\Map\images\iconPoint_3.png" />
+    <Content Include="Content\Map\images\in.png" />
+    <Content Include="Content\Map\images\loading.gif" />
+    <Content Include="Content\Map\images\no_street_view_1x_080615.png" />
+    <Content Include="Content\Map\images\out.png" />
+    <Content Include="Content\Map\images\Tool_Area.png" />
+    <Content Include="Content\Map\images\Tool_Distance.png" />
+    <Content Include="Content\Map\images\Tool_replay.png" />
+    <Content Include="Content\Map\images\Tool_replay1.png" />
+    <Content Include="Content\Map\images\ui-icons_444444_256x240.png" />
+    <Content Include="Content\Map\images\ui-icons_555555_256x240.png" />
+    <Content Include="Content\Map\images\ui-icons_777620_256x240.png" />
+    <Content Include="Content\Map\images\ui-icons_777777_256x240.png" />
+    <Content Include="Content\Map\images\ui-icons_cc0000_256x240.png" />
+    <Content Include="Content\Map\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\Map\images\yellow-point.png" />
+    <Content Include="Content\Map\js\BienTap.js" />
+    <Content Include="Content\Map\js\BienTap.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\build-html.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\build\tools\closure-compiler.jar" />
+    <Content Include="Content\Map\js\BienTapBanDo\build\tools\yuicompressor.jar" />
+    <Content Include="Content\Map\js\BienTapBanDo\chrome-app\icon_128.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\clipart\moon.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\clipart\star.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\clipart\sun.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\canvg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\dom-polyfill.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\allowedMimeTypes.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-arrows.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-closepath.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-connector.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-eyedropper.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-foreignobject.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-grid.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-helloworld.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-imagelib.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\arrows\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\arrows\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\arrows\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\closepath\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\closepath\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\connector\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\connector\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\connector\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\eyedropper\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\eyedropper\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\foreignobject\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\foreignobject\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\grid\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\grid\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\helloworld\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\helloworld\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\pl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\pt-BR.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\ro.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\sk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\sl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\imagelib\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\markers\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\markers\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\mathjax\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\mathjax\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\panning\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\panning\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\placemark\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\polygon\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\polygon\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\server_moinsave\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\server_moinsave\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\server_opensave\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\server_opensave\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\shapes\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\shapes\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\shapes\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\star\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\star\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\storage\de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\storage\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\storage\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\storage\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\webappfind\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-locale\webappfind\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-markers.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-mathjax.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-overview_window.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-panning.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-php_savefile.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-placemark.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-polygon.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-server_moinsave.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-server_opensave.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-shapes.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-star.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-storage.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-webappfind.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\ext-xdomain-messaging.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\fileopen.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\filesave.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\imagelib\index.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\imagelib\openclipart.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\extensions\savefile.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-es.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-umd.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-umd.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\jspdf.plugin.svgToPdf.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.af.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ar.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.az.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.be.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.bg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ca.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.cs.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.cy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.da.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.el.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.et.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.fa.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.fi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.fy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ga.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.gl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.he.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.hi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.hr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.hu.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.hy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.id.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.is.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.it.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ja.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ko.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.lt.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.lv.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.mk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ms.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.mt.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.nl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.no.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.pl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.pt-BR.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.pt-PT.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ro.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.ru.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sq.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sv.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.sw.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.th.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.tl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.tr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.uk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.vi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.yi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.zh-HK.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\locale\lang.zh-TW.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\redirect-on-lacking-support.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\svgcanvas-iife.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\svgcanvas-iife.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\browser-not-supported.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\browser.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\canvg\canvg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\canvg\rgbcolor.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\contextmenu.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\contextmenu\jQuery.contextMenu.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\coords.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\dbox.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\demo\demo.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\demo\js\demo.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\draw.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\embedapi-dom.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\embedapi.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\embedapi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\allowedMimeTypes.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\closepath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\closepath_icons.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-arrows.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-closepath.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-connector.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-eyedropper.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-foreignobject.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-grid.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-helloworld.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-imagelib.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-imagelib.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\arrows\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\arrows\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\arrows\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\arrows\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\closepath\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\closepath\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\closepath\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\connector\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\connector\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\connector\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\connector\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\eyedropper\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\eyedropper\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\eyedropper\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\foreignobject\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\foreignobject\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\foreignobject\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\grid\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\grid\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\grid\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\helloworld\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\helloworld\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\helloworld\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\pl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\pt-BR.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\ro.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\sk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\sl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\imagelib\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\markers\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\markers\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\markers\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\mathjax\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\mathjax\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\mathjax\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\panning\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\panning\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\panning\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\placemark\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\placemark\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\polygon\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\polygon\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\polygon\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_moinsave\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_moinsave\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_moinsave\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_opensave\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_opensave\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\server_opensave\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\shapes\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\shapes\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\shapes\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\shapes\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\star\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\star\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\star\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\storage\de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\storage\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\storage\fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\storage\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\storage\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\webappfind\en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\webappfind\vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-locale\webappfind\zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-markers.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-mathjax.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-overview_window.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-panning.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-panning.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-php_savefile.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-placemark.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-polygon.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-server_moinsave.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-server_opensave.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-shapes.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-shapes.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-star.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-storage.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-webappfind.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\ext-xdomain-messaging.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\eyedropper-icon.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\eyedropper.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\fileopen.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\filesave.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\foreignobject-edit.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\foreignobject-icons.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\foreignobject-tool.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\grid-icon.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\grid.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\helloworld-icon.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\helloworld.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\index-es.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\index.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\index.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\openclipart-es.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\openclipart.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\openclipart.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\imagelib\smiley.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-box.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-box_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-forwardslash.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-icons.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-leftarrow.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-leftarrow_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-mcircle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-mcircle_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-mkr_markers_dimension.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-mkr_markers_label.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-mkr_markers_off.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-nomarker.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-reverseslash.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-rightarrow.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-rightarrow_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-star.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-star_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-textmarker.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-triangle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-triangle_o.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-verticalslash.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\markers-xmark.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\mathjax-icons.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\mathjax.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\mathjax\MathJax.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\mathjax\TeX-AMS-MML_SVG.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\openpath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\panning.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\placemark-icons.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\placemark.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\polygon-icons.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\polygon.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\savefile.php" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\license-MIT-raphael.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapes.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\star-icons.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\star.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\webappfind-icon.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\webappfind.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\core-js-bundle\minified.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\dom-polyfill\dom-polyfill.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\dynamic-import-polyfill\importModule.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\jamilih\jml-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\load-stylesheets\index-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\qr-manipulation\dist\index-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\query-result\esm\index.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\regenerator-runtime\runtime.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\stackblur-canvas\dist\stackblur-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\geojson2svg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\history.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\historyrecording.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\add_subpath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-bottom.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-bottom.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-center.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-center.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-left.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-left.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-middle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-middle.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-right.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-right.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-top.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align-top.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\align.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\angle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\arrow_right.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\arrow_right_big.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\blur.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\bold.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\cancel.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\circle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\clear.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\clone.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\closepath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\conn.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\context_menu.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\copy.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\cut.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\c_radius.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\delete.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\document-properties.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\dropdown.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\ellipse.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\export.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\eye.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\fhpath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\fill.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\flyouth.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\flyup.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\fontsize.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\freehand-circle.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\freehand-square.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\globe_link.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\go-down.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\go-up.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\group_elements.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\height.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\image.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\import.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\italic.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\line.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linecap_butt.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linecap_round.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linecap_square.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linejoin_bevel.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linejoin_miter.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\linejoin_round.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\link_controls.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\logo.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\logo.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\move_bottom.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\move_top.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\node_clone.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\node_delete.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\none.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\no_color.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\opacity.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\open.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\openpath.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\paste.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\path.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\polygon.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\polygon.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\README.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\rect.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\redo.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\reorient.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\rotate.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\save.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\select.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\select_node.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\sep.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\shape_group_elements.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\shape_ungroup.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\source.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\spinbtn_updn_big.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\square.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\stroke.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\svg_edit_icons.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\text.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\text.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\to_path.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\undo.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\unlink_use.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\view-refresh.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\warning.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\width.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\wireframe.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\zoom.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\css\jGraduate.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\css\jPicker.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\AlphaBar.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\bar-opacity.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\Bars.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\map-opacity.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\mappoint.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\mappoint_c.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\mappoint_f.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\Maps.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\NoColor.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\picker.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\preview-opacity.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\rangearrows.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\images\rangearrows2.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\jQuery.jGraduate.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\jQuery.jPicker.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\LICENSE-Apache2.0.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jquery-ui\jquery-ui-1.8.17.custom.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jquery-ui\jquery-ui-1.8.custom.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jQuery.attr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jquery.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jquerybbq\jquery.bbq.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\js-hotkeys\jquery.hotkeys.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jspdf\jspdf.min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jspdf\jspdf.plugin.svgToPdf.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jspdf\underscore-min.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\layer.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.af.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ar.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.az.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.be.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.bg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ca.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.cs.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.cy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.da.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.de.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.el.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.en.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.et.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.fa.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.fi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.fr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.fy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ga.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.gl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.he.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.hi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.hr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.hu.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.hy.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.id.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.is.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.it.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ja.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ko.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.lt.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.lv.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.mk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ms.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.mt.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.nl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.no.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.pl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.pt-BR.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.pt-PT.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ro.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.ru.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sq.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sv.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.sw.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.th.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.tl.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.tr.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.uk.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.vi-VN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.yi.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.zh-CN.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.zh-HK.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\lang.zh-TW.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\locale.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\locale\README.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\math.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\namespaces.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\path.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\recalculate.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\redirect-on-lacking-support.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\redirect-on-no-module-support.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\sanitize.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\select.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinbtn\jQuery.SpinButton.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinbtn\jQuery.SpinButton.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinbtn\spinbtn_updn.png" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinner\spinner.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinner\spinner.gif" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\spinner\spinner.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svg-editor-es.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svg-editor.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svg-editor.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svg-editor.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svgcanvas.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svgicons\jQuery.svgIcons.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svgpathseg.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svgtransformlist.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\touch.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\typedefs.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\units.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\utilities.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\xdomain-svg-editor-es.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\xdomain-svg-editor.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\xdomain-svgedit-config-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\xdomain-svgedit-config-iife.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\content\svg-edit-overlay.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\content\svg-edit-overlay.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\handlers.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\LICENSE-MIT.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\opera-widget\config.xml" />
+    <Content Include="Content\Map\js\BienTapBanDo\opera-widget\handlers.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\opera-widget\index.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\opera-widget\style.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\rollup-config.config.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\rollup.config.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgedit-screencast-1.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgedit-screencast-2.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgedit-screencast-3.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgopen2010\index.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgopen2010\LICENSE-Apache2.0.txt" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgopen2010\logo.svg" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgopen2010\script.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\screencasts\svgopen2010\style.css" />
+    <Content Include="Content\Map\js\BienTapBanDo\svgedit-config-es.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\svgedit-config-iife.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\all_tests.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\all_tests.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\browser-bugs\removeItem-bug.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\contextmenu_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\contextmenu_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\coords_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\coords_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\draw_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\draw_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\history_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\history_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\jQuery.attr_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\jQuery.attr_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\math_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\math_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\path_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\path_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\qunit\qunit-assert-almostEquals.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\qunit\qunit-assert-close.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\qunit\qunit-assert-expectOutOfBoundsException.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\recalculate_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\recalculate_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\sanitize_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\sanitize_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\select_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\select_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\sinon\sinon-qunit.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\svgtransformlist_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\svgtransformlist_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\test1.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\test1.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\ui-test-helper.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\ui-tests\accessibility.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\ui-tests\ui.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\units_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\units_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_bbox_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_bbox_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_performance_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_performance_test.js" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_test.html" />
+    <Content Include="Content\Map\js\BienTapBanDo\test\utilities_test.js" />
+    <Content Include="Content\Map\js\bootbox.min.js" />
+    <Content Include="Content\Map\js\buttonTachThua.js" />
+    <Content Include="Content\Map\js\buttonTachThua.min.js" />
+    <Content Include="Content\Map\js\ChuGiai.js" />
+    <Content Include="Content\Map\js\ChuGiai.min.js" />
+    <Content Include="Content\Map\js\ConfigUrl.js" />
+    <Content Include="Content\Map\js\ConfigUrl.min.js" />
+    <Content Include="Content\Map\js\EditShape.js" />
+    <Content Include="Content\Map\js\fiolissdk%401.3.9.1.prod.js" />
+    <Content Include="Content\Map\js\fiolissdk%401.3.9.2.prod.js" />
+    <Content Include="Content\Map\js\fiolissdk%401.3.9.prod.js" />
+    <Content Include="Content\Map\js\HopThua.js" />
+    <Content Include="Content\Map\js\HopThua.min.js" />
+    <Content Include="Content\Map\js\ImportFile.js" />
+    <Content Include="Content\Map\js\ImportFile.min.js" />
+    <Content Include="Content\Map\js\InAn.js" />
+    <Content Include="Content\Map\js\jquery-ui-1.11.4.min.js" />
+    <Content Include="Content\Map\js\jquery-ui.js" />
+    <Content Include="Content\Map\js\jquery-ui.min.js" />
+    <Content Include="Content\Map\js\jquery.js" />
+    <Content Include="Content\Map\js\jquery.nicescroll.min.js" />
+    <Content Include="Content\Map\js\jsCheckInput.js" />
+    <Content Include="Content\Map\js\MapControl.js" />
+    <Content Include="Content\Map\js\MapControl.min.js" />
+    <Content Include="Content\Map\js\MapIOTLink.js" />
+    <Content Include="Content\Map\js\mask\inputmask.js" />
+    <Content Include="Content\Map\js\mask\jquery.inputmask.js" />
+    <Content Include="Content\Map\js\MenuLeft.js" />
+    <Content Include="Content\Map\js\MenuLeft.min.js" />
+    <Content Include="Content\Map\js\Mode3D.js" />
+    <Content Include="Content\Map\js\Mode3D.min.js" />
+    <Content Include="Content\Map\js\Problem.js" />
+    <Content Include="Content\Map\js\select2.js" />
+    <Content Include="Content\Map\js\site.js" />
+    <Content Include="Content\Map\js\site.min.js" />
+    <Content Include="Content\Map\js\sweetalert.min.js" />
+    <Content Include="Content\Map\js\SyncServiceFTI.js" />
+    <Content Include="Content\Map\js\TachThua.js" />
+    <Content Include="Content\Map\js\TachThua.min.js" />
+    <Content Include="Content\Map\js\ThuaDat.js" />
+    <Content Include="Content\Map\js\ThuaDat.min.js" />
+    <Content Include="Content\Map\js\ToolShape.js" />
+    <Content Include="Content\Map\js\ToolShape.min.js" />
+    <Content Include="Content\Map\js\toolTachThua.js" />
+    <Content Include="Content\Map\js\toolTachThua.min.js" />
+    <Content Include="Content\Map\js\turf.min.js" />
+    <Content Include="Content\Map\js\UpdateThuaDat.js" />
+    <Content Include="Content\Map\js\UpdateThuaDat.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap-select.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\js\bootstrap-select.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\Gruntfile.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\bs-commonjs-generator.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\bs-glyphicons-data-generator.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\bs-lessdoc-parser.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\bs-raw-files-generator.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\change-version.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\affix.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\alert.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\button.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\carousel.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\collapse.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\dropdown.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\modal.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\popover.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\scrollspy.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\tab.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\tooltip.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\transition.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\package.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\jquery\jquery.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\jquery\jquery.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\AdminLTE.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\AdminLTE.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-black-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-black.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-black.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-blue.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-green-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-green.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-green.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-purple.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-red-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-red.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-red.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-yellow.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\_all-skins.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\avatar.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\avatar04.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\avatar2.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\avatar3.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\avatar5.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\boxed-bg.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\american-express.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\cirrus.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\mastercard.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\mestro.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\paypal.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\paypal2.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\credit\visa.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\default-50x50.gif" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\favicon.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\home-background.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\home-bg.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\icons.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\loading.gif" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\Next.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\noimage.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\photo1.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\photo2.png" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\photo3.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\photo4.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\js\adminlte.js" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\js\adminlte.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\js\demo.js" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\js\pages\dashboard.js" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\all.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\aero%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\aero.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\aero.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\blue%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\blue.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\blue.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\flat%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\flat.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\flat.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\green%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\green.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\green.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\grey%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\grey.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\grey.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\orange%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\orange.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\orange.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\pink%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\pink.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\pink.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\purple%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\purple.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\purple.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\red%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\red.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\red.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\yellow%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\yellow.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\yellow.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\flat\_all.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\futurico\futurico%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\futurico\futurico.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\futurico\futurico.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\icheck.js" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\icheck.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\aero.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\blue.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\green.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\grey.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\line%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\line.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\line.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\orange.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\pink.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\purple.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\red.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\yellow.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\line\_all.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\aero%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\aero.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\aero.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\blue%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\blue.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\blue.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\green%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\green.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\green.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\grey%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\grey.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\grey.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\minimal%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\minimal.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\minimal.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\orange%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\orange.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\orange.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\pink%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\pink.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\pink.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\purple%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\purple.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\purple.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\red%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\red.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\red.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\yellow%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\yellow.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\yellow.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\minimal\_all.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\polaris\polaris%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\polaris\polaris.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\polaris\polaris.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\aero%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\aero.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\aero.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\blue%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\blue.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\blue.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\green%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\green.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\green.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\grey%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\grey.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\grey.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\orange%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\orange.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\orange.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\pink%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\pink.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\pink.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\purple%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\purple.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\purple.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\red%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\red.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\red.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\square%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\square.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\square.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\yellow%402x.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\yellow.css" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\yellow.png" />
+    <Content Include="Content\Map\lib\AdminLTE\iCheck\square\_all.css" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\css\select2.css" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\css\select2.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\af.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ar.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\az.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\bg.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\bs.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ca.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\cs.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\da.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\de.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\dsb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\el.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\en.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\es.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\et.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\eu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\fa.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\fi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\fr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\gl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\he.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\hi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\hr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\hsb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\hu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\hy.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\id.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\is.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\it.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ja.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\km.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ko.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\lt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\lv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\mk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ms.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\nb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\nl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\pl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ps.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\pt-BR.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\pt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ro.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\ru.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\sk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\sl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\sr-Cyrl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\sr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\sv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\th.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\tr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\uk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\vi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\zh-CN.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\i18n\zh-TW.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\select2.full.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\select2.full.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\select2.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\dist\js\select2.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\az.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\bg.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\ca.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\cs.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\da.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\de.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\en.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\es.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\et.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\eu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\fa.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\fi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\fr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\gl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\he.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\hi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\hr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\hu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\id.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\is.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\it.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\ko.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\lt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\lv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\mk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\nb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\nl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\pl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\pt-BR.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\pt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\ro.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\ru.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\sk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\sr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\sv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\th.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\tr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\uk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\vi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\zh-CN.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\i18n\zh-TW.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.css" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.full.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.full.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.min.css" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\banner.end.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\banner.start.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\jquery.mousewheel.shim.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\jquery.select2.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\jquery.shim.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\containerCss.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\dropdownCss.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\initSelection.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\inputData.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\matcher.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\query.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\compat\utils.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\core.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\ajax.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\array.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\base.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\maximumInputLength.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\maximumSelectionLength.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\minimumInputLength.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\select.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\tags.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\data\tokenizer.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\defaults.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\diacritics.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\attachBody.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\attachContainer.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\closeOnSelect.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\hidePlaceholder.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\infiniteScroll.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\minimumResultsForSearch.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\search.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\selectOnClose.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\dropdown\stopPropagation.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\af.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ar.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\az.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\bg.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\bs.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ca.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\cs.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\da.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\de.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\dsb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\el.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\en.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\es.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\et.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\eu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\fa.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\fi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\fr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\gl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\he.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\hi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\hr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\hsb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\hu.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\hy.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\id.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\is.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\it.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ja.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\km.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ko.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\lt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\lv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\mk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ms.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\nb.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\nl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\pl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ps.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\pt-BR.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\pt.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ro.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\ru.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\sk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\sl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\sr-Cyrl.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\sr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\sv.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\th.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\tr.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\uk.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\vi.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\zh-CN.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\i18n\zh-TW.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\keys.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\options.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\results.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\allowClear.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\base.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\clickMask.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\eventRelay.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\multiple.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\placeholder.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\search.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\single.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\selection\stopPropagation.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\translation.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\select2\utils.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\wrapper.end.js" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\js\wrapper.start.js" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap-theme.css" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap.css" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <Content Include="Content\Map\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Map\lib\bootstrap\dist\js\bootstrap.js" />
+    <Content Include="Content\Map\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <Content Include="Content\Map\lib\bootstrap\dist\js\npm.js" />
+    <Content Include="Content\Map\lib\dist\css\AdminLTE.css" />
+    <Content Include="Content\Map\lib\dist\css\AdminLTE.min.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="Content\Map\lib\dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-black-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-black-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-black.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-black.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-blue-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-blue.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-blue.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-green-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-green-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-green.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-green.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-purple-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-purple.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-purple.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-red-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-red-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-red.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-red.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-yellow-light.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-yellow.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\skin-yellow.min.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\_all-skins.css" />
+    <Content Include="Content\Map\lib\dist\css\skins\_all-skins.min.css" />
+    <Content Include="Content\Map\lib\dist\img\avatar.png" />
+    <Content Include="Content\Map\lib\dist\img\avatar04.png" />
+    <Content Include="Content\Map\lib\dist\img\avatar2.png" />
+    <Content Include="Content\Map\lib\dist\img\avatar3.png" />
+    <Content Include="Content\Map\lib\dist\img\avatar5.png" />
+    <Content Include="Content\Map\lib\dist\img\boxed-bg.jpg" />
+    <Content Include="Content\Map\lib\dist\img\boxed-bg.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\american-express.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\cirrus.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\mastercard.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\mestro.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\paypal.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\paypal2.png" />
+    <Content Include="Content\Map\lib\dist\img\credit\visa.png" />
+    <Content Include="Content\Map\lib\dist\img\default-50x50.gif" />
+    <Content Include="Content\Map\lib\dist\img\favicon.png" />
+    <Content Include="Content\Map\lib\dist\img\home-background.png" />
+    <Content Include="Content\Map\lib\dist\img\home-bg.png" />
+    <Content Include="Content\Map\lib\dist\img\icons.png" />
+    <Content Include="Content\Map\lib\dist\img\loading.gif" />
+    <Content Include="Content\Map\lib\dist\img\Next.png" />
+    <Content Include="Content\Map\lib\dist\img\noimage.jpg" />
+    <Content Include="Content\Map\lib\dist\img\photo1.png" />
+    <Content Include="Content\Map\lib\dist\img\photo2.png" />
+    <Content Include="Content\Map\lib\dist\img\photo3.jpg" />
+    <Content Include="Content\Map\lib\dist\img\photo4.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user1-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user2-160x160.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user3-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user4-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user5-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user6-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user7-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\img\user8-128x128.jpg" />
+    <Content Include="Content\Map\lib\dist\js\adminlte.js" />
+    <Content Include="Content\Map\lib\dist\js\adminlte.min.js" />
+    <Content Include="Content\Map\lib\dist\js\demo.js" />
+    <Content Include="Content\Map\lib\dist\js\pages\dashboard.js" />
+    <Content Include="Content\Map\lib\dist\js\pages\dashboard2.js" />
+    <Content Include="Content\Map\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\Map\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Map\lib\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="Content\Map\lib\jquery-validation\dist\additional-methods.js" />
+    <Content Include="Content\Map\lib\jquery-validation\dist\additional-methods.min.js" />
+    <Content Include="Content\Map\lib\jquery-validation\dist\jquery.validate.js" />
+    <Content Include="Content\Map\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <Content Include="Content\Map\lib\jquery\dist\jquery.js" />
+    <Content Include="Content\Map\lib\jquery\dist\jquery.min.js" />
+    <Content Include="Content\Map\lib\jquery\LICENSE.txt" />
+    <Content Include="Content\Map\SDK\fiolissdk%401.3.7.prod.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="GdalConfiguration.vb" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="images\btn-down.png" />
+    <Content Include="images\btn-left.png" />
+    <Content Include="images\btn-right.png" />
+    <Content Include="images\btn-up.png" />
+    <Content Include="images\GiaoHoi\ghcachduongthang.png" />
+    <Content Include="images\GiaoHoi\ghdoctheocanh.png" />
+    <Content Include="images\GiaoHoi\ghhuong.png" />
+    <Content Include="images\GiaoHoi\ghthuan.png" />
+    <Content Include="images\GiaoHoi\GiaoHoiNghich_3DiemGoc.png" />
+    <Content Include="images\iconPoint.png" />
+    <Content Include="images\iconPoint_1.png" />
+    <Content Include="images\iconPoint_2.png" />
+    <Content Include="images\iconPoint_3.png" />
+    <Content Include="images\in.png" />
+    <Content Include="images\loading.gif" />
+    <Content Include="images\no_street_view_1x_080615.png" />
+    <Content Include="images\out.png" />
+    <Content Include="images\Tool_Area.png" />
+    <Content Include="images\Tool_Distance.png" />
+    <Content Include="images\Tool_replay.png" />
+    <Content Include="images\Tool_replay1.png" />
+    <Content Include="images\ui-icons_444444_256x240.png" />
+    <Content Include="images\ui-icons_555555_256x240.png" />
+    <Content Include="images\ui-icons_777620_256x240.png" />
+    <Content Include="images\ui-icons_777777_256x240.png" />
+    <Content Include="images\ui-icons_cc0000_256x240.png" />
+    <Content Include="images\ui-icons_ffffff_256x240.png" />
+    <Content Include="images\yellow-point.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\.bower.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\bower.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\CHANGELOG.md" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\Gemfile" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\Gemfile.lock" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\.jshintrc" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\configBridge.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\npm-shrinkwrap.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\grunt\sauce_browsers.yml" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\ISSUE_TEMPLATE.md" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\.jscsrc" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\js\.jshintrc" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\.csscomb.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\.csslintrc" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\alerts.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\badges.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\bootstrap.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\breadcrumbs.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\button-groups.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\buttons.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\carousel.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\close.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\code.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\component-animations.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\dropdowns.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\forms.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\glyphicons.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\grid.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\input-groups.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\jumbotron.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\labels.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\list-group.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\media.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\alerts.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\background-variant.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\border-radius.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\buttons.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\center-block.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\clearfix.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\forms.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\gradients.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\grid-framework.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\grid.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\hide-text.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\image.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\labels.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\list-group.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\nav-divider.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\nav-vertical-align.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\opacity.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\pagination.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\panels.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\progress-bar.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\reset-filter.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\reset-text.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\resize.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\responsive-visibility.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\size.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\tab-focus.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\table-row.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\text-emphasis.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\text-overflow.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\mixins\vendor-prefixes.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\modals.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\navbar.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\navs.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\normalize.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\pager.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\pagination.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\panels.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\popovers.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\print.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\progress-bars.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\responsive-embed.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\responsive-utilities.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\scaffolding.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\tables.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\theme.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\thumbnails.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\tooltip.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\type.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\utilities.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\variables.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\less\wells.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\LICENSE" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\nuget\bootstrap.less.nuspec" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\nuget\bootstrap.nuspec" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\nuget\MyGet.ps1" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\package.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\bootstrap\README.md" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\.bower.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\.gitignore" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\.npmignore" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\bower.json" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\animated.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\bordered-pulled.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\core.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\fixed-width.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\font-awesome.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\icons.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\larger.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\list.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\mixins.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\path.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\rotated-flipped.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\screen-reader.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\stacked.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\less\variables.less" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\font-awesome.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_animated.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_core.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_icons.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_larger.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_list.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_mixins.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_path.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_stacked.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\font-awesome\scss\_variables.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\bower_components\jquery\jquery.min.map" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\adminlte.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\dist\css\adminlte.min.css.map" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\select2.jquery.json" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\core.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\mixins\_gradients.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\classic\layout.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\classic\_defaults.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\classic\_multiple.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\classic\_single.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\default\layout.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\default\_multiple.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\theme\default\_single.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\_dropdown.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\_multiple.scss" />
+    <Content Include="Content\Map\lib\AdminLTE\select2\src\scss\_single.scss" />
+    <Content Include="Content\Map\lib\bootstrap\.bower.json" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <Content Include="Content\Map\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <Content Include="Content\Map\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Map\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Map\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Map\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\Map\lib\bootstrap\LICENSE" />
+    <Content Include="Content\Map\lib\dist\css\adminlte.css.map" />
+    <Content Include="Content\Map\lib\dist\css\adminlte.min.css.map" />
+    <Content Include="Content\Map\lib\font-awesome\.bower.json" />
+    <Content Include="Content\Map\lib\font-awesome\.gitignore" />
+    <Content Include="Content\Map\lib\font-awesome\.npmignore" />
+    <Content Include="Content\Map\lib\font-awesome\bower.json" />
+    <Content Include="Content\Map\lib\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Map\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Map\lib\jquery-validation\.bower.json" />
+    <Content Include="Content\Map\lib\jquery-validation\LICENSE.md" />
+    <Content Include="Content\Map\lib\jquery\.bower.json" />
+    <Content Include="Content\Map\lib\jquery\dist\jquery.min.map" />
+    <Content Include="App_Data\gdal\data\compdcs.csv" />
+    <Content Include="App_Data\gdal\data\coordinate_axis.csv" />
+    <Content Include="App_Data\gdal\data\cubewerx_extra.wkt" />
+    <Content Include="App_Data\gdal\data\datum_shift.csv" />
+    <Content Include="App_Data\gdal\data\default.rsc" />
+    <Content Include="App_Data\gdal\data\ecw_cs.wkt" />
+    <Content Include="App_Data\gdal\data\eedaconf.json" />
+    <Content Include="App_Data\gdal\data\ellipsoid.csv" />
+    <Content Include="App_Data\gdal\data\epsg.wkt" />
+    <Content Include="App_Data\gdal\data\esri_epsg.wkt" />
+    <Content Include="App_Data\gdal\data\esri_extra.wkt" />
+    <Content Include="App_Data\gdal\data\esri_StatePlane_extra.wkt" />
+    <Content Include="App_Data\gdal\data\esri_Wisconsin_extra.wkt" />
+    <Content Include="App_Data\gdal\data\gcs.csv" />
+    <Content Include="App_Data\gdal\data\gcs.override.csv" />
+    <None Include="App_Data\gdal\data\gdalvrt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data\gdal\data\gdal_datum.csv" />
+    <Content Include="App_Data\gdal\data\geoccs.csv" />
+    <None Include="App_Data\gdal\data\gmlasconf.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data\gdal\data\gt_datum.csv" />
+    <Content Include="App_Data\gdal\data\gt_ellips.csv" />
+    <Content Include="App_Data\gdal\data\header.dxf" />
+    <Content Include="App_Data\gdal\data\inspire_cp_BasicPropertyUnit.gfs" />
+    <Content Include="App_Data\gdal\data\inspire_cp_CadastralBoundary.gfs" />
+    <Content Include="App_Data\gdal\data\inspire_cp_CadastralParcel.gfs" />
+    <Content Include="App_Data\gdal\data\inspire_cp_CadastralZoning.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_AdmArea.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_AdmBdry.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_AdmPt.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_BldA.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_BldL.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_Cntr.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_CommBdry.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_CommPt.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_Cstline.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_ElevPt.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_GCP.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_LeveeEdge.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RailCL.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdArea.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdASL.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdCompt.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdEdg.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdMgtBdry.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RdSgmtA.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_RvrMgtBdry.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_SBAPt.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_SBArea.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_SBBdry.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_WA.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_WL.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_WStrA.gfs" />
+    <Content Include="App_Data\gdal\data\jpfgdgml_WStrL.gfs" />
+    <None Include="App_Data\gdal\data\netcdf_config.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\gdal\data\nitf_spec.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="App_Data\gdal\data\ogrvrt.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data\gdal\data\osmconf.ini" />
+    <Content Include="App_Data\gdal\data\ozi_datum.csv" />
+    <Content Include="App_Data\gdal\data\ozi_ellips.csv" />
+    <Content Include="App_Data\gdal\data\pcs.csv" />
+    <Content Include="App_Data\gdal\data\pcs.override.csv" />
+    <Content Include="App_Data\gdal\data\plscenesconf.json" />
+    <Content Include="App_Data\gdal\data\prime_meridian.csv" />
+    <Content Include="App_Data\gdal\data\projop_wparm.csv" />
+    <Content Include="App_Data\gdal\data\ruian_vf_ob_v1.gfs" />
+    <Content Include="App_Data\gdal\data\ruian_vf_st_uvoh_v1.gfs" />
+    <Content Include="App_Data\gdal\data\ruian_vf_st_v1.gfs" />
+    <Content Include="App_Data\gdal\data\ruian_vf_v1.gfs" />
+    <Content Include="App_Data\gdal\data\s57agencies.csv" />
+    <Content Include="App_Data\gdal\data\s57attributes.csv" />
+    <Content Include="App_Data\gdal\data\s57attributes_aml.csv" />
+    <Content Include="App_Data\gdal\data\s57attributes_iw.csv" />
+    <Content Include="App_Data\gdal\data\s57expectedinput.csv" />
+    <Content Include="App_Data\gdal\data\s57objectclasses.csv" />
+    <Content Include="App_Data\gdal\data\s57objectclasses_aml.csv" />
+    <Content Include="App_Data\gdal\data\s57objectclasses_iw.csv" />
+    <Content Include="App_Data\gdal\data\seed_2d.dgn" />
+    <Content Include="App_Data\gdal\data\seed_3d.dgn" />
+    <Content Include="App_Data\gdal\data\stateplane.csv" />
+    <Content Include="App_Data\gdal\data\trailer.dxf" />
+    <Content Include="App_Data\gdal\data\unit_of_measure.csv" />
+    <None Include="App_Data\gdal\data\vdv452.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="App_Data\gdal\data\vertcs.csv" />
+    <Content Include="App_Data\gdal\data\vertcs.override.csv" />
+    <Content Include="App_Data\gdal\GDALLicense.rtf" />
+    <Content Include="App_Data\gdal\GISInternalsLicense.rtf" />
+    <Content Include="App_Data\gdal\share\esri.extra" />
+    <Content Include="App_Data\gdal\share\ntf_r93.gsb" />
+    <Content Include="App_Data\gdal\share\ntv1_can.dat" />
+    <Content Include="App_Data\gdal\share\nzgd2kgrid0005.gsb" />
+    <Content Include="App_Data\gdal\share\other.extra" />
+    <Content Include="App_Data\gdal\share\proj_def.dat" />
+    <Content Include="Content\Map\js\BienTapBanDo\.gitignore" />
+    <Content Include="Content\Map\js\BienTapBanDo\AUTHORS" />
+    <Content Include="Content\Map\js\BienTapBanDo\build\tools\COPYING" />
+    <Content Include="Content\Map\js\BienTapBanDo\build\tools\README" />
+    <Content Include="Content\Map\js\BienTapBanDo\build\tools\ship.py" />
+    <Content Include="Content\Map\js\BienTapBanDo\CHANGES.md" />
+    <Content Include="Content\Map\js\BienTapBanDo\chrome-app\manifest.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\composer.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-es.min.js.map" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\index-umd.min.js.map" />
+    <Content Include="Content\Map\js\BienTapBanDo\dist\svgcanvas-iife.min.js.map" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\animal.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\arrow.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\dialog_balloon.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\electronics.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\flowchart.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\game.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\math.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\misc.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\music.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\object.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\raphael_1.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\raphael_2.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\extensions\shapelib\symbol.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\external\core-js-bundle\minified.js.map" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\images\svg_edit_icons.svgz" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\jgraduate\README" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\js-hotkeys\README.md" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\svg-editor.manifest" />
+    <Content Include="Content\Map\js\BienTapBanDo\editor\table" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\chrome.manifest" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\content\svg-edit-overlay.xul" />
+    <Content Include="Content\Map\js\BienTapBanDo\firefox-extension\install.rdf" />
+    <Content Include="Content\Map\js\BienTapBanDo\FUNDING.yml" />
+    <Content Include="Content\Map\js\BienTapBanDo\lgtm.yml" />
+    <Content Include="Content\Map\js\BienTapBanDo\package-lock.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\package.json" />
+    <Content Include="Content\Map\js\BienTapBanDo\README.md" />
+    <Content Include="App_Data\Mau\gcntemp123.doc" />
+    <Content Include="App_Data\Mau\mauhosokt.doc" />
+    <Content Include="App_Data\Mau\mauhskythuat.doc" />
+    <Content Include="App_Data\Mau\mauKT.doc" />
+    <Content Include="App_Data\Mau\mauKT.docx" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_BienTap.cshtml" />
+    <Content Include="Views\Home\_ChuGiai.cshtml" />
+    <Content Include="Views\Home\_DetailProperty.cshtml" />
+    <Content Include="Views\Home\_EditMode3D.cshtml" />
+    <Content Include="Views\Home\_InforHopThua.cshtml" />
+    <Content Include="Views\Home\_NhapDuLieuFile.cshtml" />
+    <Content Include="Views\Home\_TachThua.cshtml" />
+    <Content Include="Views\Home\_ToolRule.cshtml" />
+    <Content Include="Views\Home\_TrichXuatFile.cshtml" />
+    <Content Include="Views\Home\_UpdateThuaDat.cshtml" />
+    <Content Include="Views\Shared\_LayoutMap.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Shared\_LayoutMapIOT.cshtml" />
+    <Content Include="Views\Home\_EditThuaDat.cshtml" />
+    <Content Include="Views\Home\_MenuPartial.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\FileServer\TKKK\" />
+    <Folder Include="App_Data\UploadedFiles\" />
+    <Folder Include="Views\InAnNew\" />
+    <Folder Include="Views\InAn\" />
+    <Folder Include="Views\Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51979</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51979/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

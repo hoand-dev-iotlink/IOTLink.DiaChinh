@@ -1,0 +1,246 @@
+﻿<div class="modal fade bs-example-modal-lg modal-edit-mode-3d" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div id="loading-map-mode3d" class="loading-map" style="display: none;background-color: #0000;">
+        <img src="~/Images/MapIOT/loading.gif" />
+    </div>
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close-modal-iotlink" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Biên tập không gian 3D</h4>
+            </div>
+            <div class="modal-body">
+                <div class="option-mode-3d">
+                    <div class="box-body project-content">
+                        <div class="parent-info-mode-3d">
+                            <div class="row info-mode-3d">
+                                <div class="form-group col-lg-12 col-md-12">
+                                    <label class="control-label required" for="Name">Tên<span style="color: red">*</span></label>:
+                                    <input class="form-control" data-val="true" data-val-required="Tên là bắt buộc" id="txtName" name="Name" type="text" value="">
+                                </div>
+                            </div>
+                            <div class="row changeModel">
+                                <label class="required title-common col-lg-12 col-md-12">Không gian 3D <span style="color: red">*</span></label>
+                                <div class="control-group form-group col-lg-12 col-md-12">
+                                    <div class="row option-draw-3d">
+                                        <div class="radio">
+                                            <label>
+                                                <input name="modelObject" type="radio" class="ace" value="2" id="drawObject" checked>
+                                                <span class="lbl"> Vẽ đáy</span>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="modelObject" type="radio" class="ace" value="1" id="modelObject">
+                                                <span class="lbl"> Tải lên</span>
+                                            </label>
+                                        </div>
+                                        <div class="radio">
+                                            <label>
+                                                <input name="modelObject" type="radio" class="ace" value="3" id="defaultObject">
+                                                <span class="lbl"> Mẫu có sẳn</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="upload-object" style="display:none">
+                                            <div class="form-group">
+                                                <label class="upload-model">
+                                                    <input accept="image/x-png,image/jpeg,.obj" multiple="" class="obj-file" id="objFile" type="file" style="display:none">
+                                                    <i class="fa fa-upload" aria-hidden="true"></i>Tải lên
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="draw-object col-lg-12 col-md-12">
+                                            <div class="form-group hinhdangday">
+                                                <button type="button" class="btn btn-primary btn-sm" id="btnStartDraw">Bắt đầu vẽ</button>
+                                                <button type="button" class="btn btn-primary btn-sm hide" id="btnEditDraw">Chỉnh sửa</button>
+                                                <button type="button" class="btn btn-success btn-sm hide" id="btnEndDraw">Kết thúc vẽ</button>
+                                                <button type="button" class="btn btn-danger btn-sm hide" id="btnDeleteDraw">Xóa</button>
+                                                <div class="form-group errorDrawEmpty" style="display:none">
+                                                    <span style="color:red">Vui lòng đáy phải trong thửa đất!</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="object-mode" style="display:none">
+                                            <select class="object-mode-3d form-control"></select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row properti-mode-3d">
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label">Tỉ lệ<span style="color: red">*</span>:</label>
+                                    <input value="1" class="form-control" id="Scale" name="Scale" />
+                                </div>
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label">Góc xoay<span style="color: red">*</span>:</label>
+                                    <input value="0" class="form-control" id="Bearing" name="Bearing" />
+
+                                </div>
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label">Chiều cao</label><i> (m)</i>:
+                                    <input value="1" class="form-control" id="HeightScale" name="HeightScale" />
+                                </div>
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label">Cao độ</label> <i> (mực nước biển)</i>:
+                                    <input value="0" class="form-control" id="Elevation" name="Elevation" />
+                                </div>
+                            </div>
+                            <div class="row info-mode-3d">
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label">Số tầng</label>:
+                                    <input value="1" class="form-control" id="Heightfloor" name="Heightfloor" />
+                                </div>
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label" for="AreaFloor">Diện tích sàn</label><i> (m<sup>2</sup>)</i>:
+                                    <input class="form-control" data-val="true" data-val-number="The field Cao độ must be a number." id="AreaFloor" name="AreaFloor" value="0" typenumber="float">
+                                </div>
+                                <div class="col-xs-12 col-sm-12 form-group">
+                                    <label class="control-label" for="TotalAreaFloor">Tổng diện tích sàn</label><i> (m<sup>2</sup>)</i>:
+                                    <input class="form-control" data-val="true" data-val-number="The field Cao độ must be a number." id="TotalAreaFloor" name="TotalAreaFloor" value="0" typenumber="float">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-footer">
+                            <button type="button" class="btn btn-success btn-save-mode-3d">Lưu lại</button>
+                            <button type="button" class="btn btn-light" data-dismiss="modal">Hủy bỏ</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-mode-3d" id="mapMode3D"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-edit-mode-3d .modal-dialog {
+        width: 100%;
+        margin: 0px;
+        height: 100%;
+    }
+
+    .modal-edit-mode-3d .modal-body {
+        padding: 0px;
+        display: flex;
+        height: calc(100% - 60px);
+    }
+
+    .modal-edit-mode-3d .modal-content {
+        height: 100%;
+    }
+
+    .modal-edit-mode-3d .option-mode-3d {
+        width: 300px;
+        height: 100%;
+        background: #f5fbff;
+        position: relative;
+    }
+
+    .modal-edit-mode-3d button.close {
+        top: 14px;
+        opacity: 1;
+    }
+
+    .modal-edit-mode-3d .map-mode-3d {
+        width: calc(100% - 300px);
+    }
+
+    .modal-edit-mode-3d .radio + .radio, .modal-edit-mode-3d .checkbox + .checkbox {
+        margin: none;
+    }
+
+    .modal-edit-mode-3d .option-draw-3d {
+        display: flex;
+        align-items: baseline;
+    }
+
+    .modal-edit-mode-3d .upload-model {
+        cursor: pointer;
+        width: 378px;
+        height: 36px;
+        background-color: #2da1f8;
+        /*border-radius: 4px;*/
+        border: none;
+        line-height: normal;
+        font-size: 14px;
+        color: #fff;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -ms-flex-align: center;
+        align-items: center;
+        /*padding-left: 32px;
+        text-align: center;*/
+    }
+
+    .modal-edit-mode-3d .hinhdangday button {
+        border-radius: 0px;
+    }
+
+    .modal-edit-mode-3d .hinhdangday .btn-primary {
+        background-color: #2da1f8;
+        border-color: #2da1f8;
+    }
+
+    .modal-edit-mode-3d .project-content {
+        padding: 0px;
+        padding-top: 15px;
+        height: 100%;
+    }
+
+    .modal-edit-mode-3d .row {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .modal-edit-mode-3d .btn-footer {
+        position: absolute;
+        bottom: 0px;
+        width: 100%;
+        display: flex;
+    }
+
+        .modal-edit-mode-3d .btn-footer button {
+            width: 50%;
+            border-radius: 0px;
+        }
+
+    .form-group .ui-widget-content {
+        width: 100%;
+        height: 35px;
+    }
+    /*.object-mode .select2-container{
+        width:100% !important;
+    }
+    .object-mode .select2-container .select2-selection--single{
+        height:34px;
+    }*/
+    @@media (max-height: 810px) {
+        .modal-edit-mode-3d .project-content{
+            overflow-y: auto !important;
+             padding-top:0px;
+        }
+        .modal-edit-mode-3d .parent-info-mode-3d {
+            padding-bottom: 20px;
+            overflow-y: auto !important;
+        }
+        .modal-edit-mode-3d .btn-footer{
+            position: unset !important;
+        }
+    }
+    @@media (max-width: 810px) {
+        .modal-edit-mode-3d .project-content{
+            overflow-y: auto !important;
+            padding-top:0px;
+        }
+        .modal-edit-mode-3d .parent-info-mode-3d {
+            padding-bottom: 20px;
+            overflow-y: auto !important;
+        }
+        .modal-edit-mode-3d .btn-footer{
+            position: unset !important;
+        }
+    }
+
+</style>

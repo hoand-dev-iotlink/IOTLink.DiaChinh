@@ -1,0 +1,616 @@
+﻿@*<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>*@
+<div class="modal fade bs-example-modal-lg modal-tach-thua" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close close-modal-iotlink" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Tách thửa đất</h4>
+            </div>
+            <div class="modal-body">
+                <div class="menu-tach-thua">
+                    <div style="height: 100%;overflow-y:auto">
+                        <div>
+                            <ul>
+                                <li><a href="javascript:;" class="menu-cach-duong-thang active"><i class="fa fa-list-alt"></i> Giao hội cách đường thẳng</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-thuan"><i class="fa fa-tachometer"></i> Giao hội thuận</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-nghich"><i class="fa fa-desktop"></i> Giao hội nghịch</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-huong"><i class="fa fa-list"></i> Giao hội hướng</a></li>
+                                <li><a href="javascript:;" class="menu-doc-theo-canh"><i class="fa fa-pencil-square-o"></i> Giao hội dọc theo cạnh</a></li>
+                                <li><a href="javascript:;" class="menu-nhap-toa-do"><i class="fa fa-list-alt"></i> Nhập tọa độ</a></li>
+                            </ul>
+                        </div>
+
+                        <table class="table table-hover table-point">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Phương thức</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pointGhiNhan"></tbody>
+                        </table>
+                        <div class="button-tool">
+                            <button type="button" class="btn btn-default clear-all-point" title="Xóa toàn bộ điểm chia"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default view-tach-thua" title="Xem kết quả tách thửa"><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default clear-result" title="Xóa kết quả tách thửa"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default save-tach-thua" title="Lưu kết quả"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="map-tach-thua" id="madTachThua">
+                    <div class="footer-map-point col-xs-12 col-sm-12">
+                        <div class="header-point">
+                            <h4 class="title-giao-hoi">Giao hội</h4>
+                            <span class="btn-show-hide-point"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="context-point">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 form-giao-hoi">
+                                            <div class="col-xs-12 col-sm-10">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc1" class="col-sm-4 control-label no-padding-right">Đỉnh A</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhA"></select>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc2" class="col-sm-4 control-label no-padding-right">Đỉnh B</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhB"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc1" class="col-sm-4 control-label no-padding-right">Đỉnh C</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhC"></select>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc2" class="col-sm-4 control-label no-padding-right">Đỉnh D</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhD"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cách AB</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Khoảng cách (m)" id="inp_CachAB">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cách CD</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Khoảng cách (m)" id="inp_CachCD">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cạnh A-C</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Độ dài cạnh (m)" id="inp_CanhAC">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cạnh B-C</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Độ dài cạnh (m)" id="inp_CanhBC">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc CAB</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocCAB" disabled="">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc CBA</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocCBA" disabled="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc APB</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocAPB">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc APC</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocAPC">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <div class="control-group">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-2">
+                                                <div class="control-group">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-2">
+                                                <div class="phương-thuc-giao-hoi-thuan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions center">
+                                        <button type="button" class="btn btn-sm btn-warning" id="btn_Clear">
+                                            Làm lại
+                                            <i class="ace-icon fa fa-refresh icon-on-right bigger-110"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-warning" id="btn_Preview">
+                                            Xem thử
+                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-success" id="btn_Submit">
+                                            Ghi nhận
+                                            <i class="ace-icon fa fa-plus icon-on-right bigger-110"></i>
+                                        </button>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 col-md-4">
+                                    <div class="thumbnail search-thumbnail note-giao-hoi">
+                                        <img class="media-object" alt="100%x200" src="~/Content/Map/images/GiaoHoi/ghcachduongthang.png" data-holder-rendered="true" style="height: 100%; width: 100%; display: block;">
+                                        <div class="caption">
+                                            <p>Lấy ra điểm cách đường AB, CD lần lượt các khoảng là d1 và d2. Kết quả sẽ thu được là 4 điểm 1,2,3,4.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="infor-Tach-Thua">
+                    <div style="height: 90%;overflow-y:auto;overflow-x: hidden;">
+                        <input type="text" value="" name="id" hidden />
+                        <div class="header-infor">
+                            <span><i class="fa fa-times-circle" title="Đóng" aria-hidden="true"></i></span>
+                            <h4>Thông tin thửa đất</h4>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Số tờ bản đồ <span style="color:red">*</span></label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="number" id="text-update-soTo" class="form-control form-style" placeholder="Số hiệu tờ bản đồ" value="0" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Số thứ tự thửa <span style="color:red">*</span></label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="number" id="text-update-soThua" class="form-control form-style" placeholder="Số thứ tự thửa" value="0" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Tờ bản đồ cũ</label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="number" id="text-update-soTo-old" class="form-control form-style" placeholder="Tờ bản đồ cũ" value="0" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Thửa cũ</label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="number" id="text-update-soThua-old" class="form-control form-style" placeholder="Thửa cũ" value="0" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Diện tích <span style="color:red">*</span></label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="text" id="text-update-dienTich" class="form-control form-style" placeholder="Diện tích" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Diện tích pháp lý <span style="color:red">*</span></label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="text" id="text-update-dienTichPhapLy" class="form-control form-style" placeholder="Diện tích pháp lý" value="" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Mục đích sử dụng <span style="color:red">*</span></label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                @Html.DropDownList("KH", new List<SelectListItem>()@*, "--Chọn mục đích sử dụng--"*@, new { @id = "KH-listselectid", @class = "KH-select", autocomplete = "off" })
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Tên chủ</label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="text" id="text-update-chuNha" class="form-control form-style" placeholder="Tên chủ sở hữu" value="" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <label class="control-label col-md-5 col-xs-12 required">Địa chỉ</label>
+                            <div class="col-md-7 col-xs-12 form-group">
+                                <input type="text" id="text-update-diaChi" class="form-control form-style" placeholder="Địa chỉ" value="" />
+                            </div>
+                        </div>
+                        @*<div class="row form-group">*@
+                        <div class="btn-footer">
+                            <button type="button" class="btn btn-success btn-save-infor-temp">Cập nhật thông tin</button>
+                            <button type="button" class="btn btn-light btn-cancel">Hủy bỏ</button>
+                        </div>
+                        @*</div>*@
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-tach-thua {
+        width: 100%;
+        padding: 0px !important;
+        overflow: hidden !important;
+        height: 100%;
+    }
+
+        .modal-tach-thua .modal-dialog {
+            width: 100%;
+            padding: 5px;
+            margin: 0px;
+            height: 100%;
+        }
+
+        .modal-tach-thua .modal-header {
+            position: relative;
+        }
+
+        .modal-tach-thua .modal-body {
+            height: calc(100vh - 56px);
+            display: flex;
+            padding: 0px !important;
+        }
+
+    .map-tach-thua {
+        height: 100%;
+        width: calc(100% - 240px);
+        background-color: #f1f1f1;
+    }
+
+    .modal-tach-thua .menu-tach-thua {
+        width: 240px;
+        height: 100%;
+        border-right: 1px solid #c3c3c3;
+        position: relative;
+    }
+
+    .map-tach-thua .modal-body {
+        position: relative;
+    }
+
+    .menu-tach-thua ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+    }
+
+    .menu-tach-thua li a {
+        display: block;
+        color: #000;
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+
+        .menu-tach-thua li a i {
+            font-size: 18px;
+        }
+        /* Change the link color on hover */
+        .menu-tach-thua li a:hover {
+            background-color: #48a0e2;
+            color: white;
+        }
+
+        .menu-tach-thua li a.active {
+            background-color: #48a0e2;
+            color: white;
+        }
+
+    .table-point {
+        max-height: calc(100% - 400px);
+        background-color: white;
+    }
+
+    .button-tool {
+        margin: 9px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .button-tool .btn-default {
+            width: 45px;
+            height: 40px;
+        }
+
+    .modal-tach-thua .modal-body .footer-map-point {
+        position: absolute;
+        bottom: 0px;
+        z-index: 10;
+        background: white;
+        width: calc(100% - 240px);
+        padding: 0px;
+        height: 390px
+    }
+
+        .modal-tach-thua .modal-body .footer-map-point .header-point {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 0 25px;
+            background: #49aef9;
+            color: #fff;
+            font-size: 19px;
+        }
+
+    .footer-map-point .context-point {
+        padding: 12px;
+    }
+
+        .footer-map-point .context-point label {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+    .footer-map-point select {
+        border-radius: 0;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        color: #858585;
+        background-color: #FFF;
+        border: 1px solid #D5D5D5;
+        padding: 3px 4px;
+        height: 30px;
+    }
+
+    .footer-map-point input {
+        border-radius: 0 !important;
+        color: #858585;
+        background-color: #FFF;
+        border: 1px solid #D5D5D5;
+        padding: 5px 4px 6px;
+        font-size: 14px;
+        font-family: inherit;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        -webkit-transition-duration: .1s;
+        transition-duration: .1s;
+    }
+
+    .footer-map-point .form-actions {
+        display: flex;
+        background-color: #F5F5F5;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 19px 20px 20px;
+        justify-content: center;
+        padding: 0px !important;
+    }
+
+        .footer-map-point .form-actions button {
+            border-radius: 0px;
+            padding: 7px 18px;
+            margin-left: 5px;
+        }
+
+    .footer-map-point .form-group input:disabled, .footer-map-point .form-group input[disabled] {
+        color: #848484 !important;
+        background-color: #EEE !important;
+    }
+
+    .footerHide {
+        -webkit-animation-name: animationfooter; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationfooter;
+        animation-duration: 2s;
+        bottom: -350px !important;
+    }
+
+    .footerShow {
+        -webkit-animation-name: animationfooter1; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationfooter1;
+        animation-duration: 2s;
+        bottom: 0px;
+    }
+
+    @@keyframes animationfooter {
+        0% {
+            bottom: 0px;
+        }
+
+        100% {
+            bottom: -350px;
+        }
+    }
+
+    @@-webkit-keyframes animationfooter {
+        0% {
+            bottom: 0px;
+        }
+
+        100% {
+            bottom: -350px;
+        }
+    }
+
+    @@keyframes animationfooter1 {
+        0% {
+            bottom: -350px;
+        }
+
+        100% {
+            bottom: 0px
+        }
+    }
+
+    @@-webkit-keyframes animationfooter1 {
+        0% {
+            bottom: -350px;
+        }
+
+        100% {
+            bottom: 0px
+        }
+    }
+
+    .infor-Tach-Thua {
+        width: 350px;
+        height: 100%;
+        position: absolute;
+        top: 0px;
+        /*right: 0px;*/
+        background: #fff;
+        right: -350px
+    }
+
+        .infor-Tach-Thua .form-group {
+            margin-bottom: 8px;
+            padding: 0px 9px;
+        }
+
+        .infor-Tach-Thua .header-infor {
+            width: 100%;
+            height: 30px;
+            background: #49aef9;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+            .infor-Tach-Thua .header-infor span {
+                position: absolute;
+                left: 7px;
+                cursor: pointer;
+                font-size: 17px;
+            }
+
+    .headerHide {
+        -webkit-animation-name: animationheader; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationheader;
+        animation-duration: 2s;
+        right: -350px !important;
+    }
+
+    .headerShow {
+        -webkit-animation-name: animationheader1; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationheader1;
+        animation-duration: 2s;
+        right: 0px;
+    }
+
+    @@keyframes animationheader {
+        0% {
+            right: 0px;
+        }
+
+        100% {
+            right: -355px;
+        }
+    }
+
+    @@-webkit-keyframes animationheader {
+        0% {
+            right: 0px;
+        }
+
+        100% {
+            right: -355px;
+        }
+    }
+
+    @@keyframes animationheader1 {
+        0% {
+            right: -355px;
+        }
+
+        100% {
+            right: 0px;
+        }
+    }
+
+    @@-webkit-keyframes animationheader1 {
+        0% {
+            right: -355px;
+        }
+
+        100% {
+            right: 0px;
+        }
+    }
+
+    .modal-tach-thua .btn-footer {
+        /*position: absolute;*/
+        bottom: 0px;
+        width: 100%;
+        display: flex;
+    }
+
+        .modal-tach-thua .btn-footer button {
+            width: 50%;
+            border-radius: 0px;
+        }
+
+    .modal-tach-thua .clearPoint {
+        cursor: pointer;
+        color: #ed4f4f;
+    }
+
+        .modal-tach-thua .clearPoint:hover {
+            cursor: pointer;
+            color: #f5a8a8;
+        }
+
+    .modal-tach-thua tr td {
+        vertical-align: inherit !important;
+    }
+
+    .modal-tach-thua tr.active-select {
+        background-color: #5da8e2;
+        color: #fff;
+    }
+
+    .table-hover > tbody > tr:hover {
+        background-color: #5da8e2 !important;
+        color: #fff !important;
+    }
+
+    @@media (max-height: 810px) {
+
+        .modal-tach-thua .footer-map-point .context-point {
+            padding: 5px !important;
+        }
+
+        .modal-tach-thua .col-xs-12, .modal-tach-thua .col-sm-8,
+        .modal-tach-thua .col-xs-6, .modal-tach-thua .col-sm-2,
+        .modal-tach-thua .col-md-4, .modal-tach-thua .col-sm-12,
+        .modal-tach-thua .col-sm-10, .modal-tach-thua .col-sm-4 {
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
+
+        .modal-body .footer-map-point {
+            height: 320px !important;
+        }
+
+        .modal-tach-thua .footer-map-point .form-actions {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .modal-tach-thua .footer-map-point {
+            padding: 0px !important;
+        }
+
+        .modal-tach-thua .footerHide {
+            -webkit-animation-name: animationfooter; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            animation-name: animationfooter;
+            animation-duration: 2s;
+            bottom: -280px !important;
+        }
+    }
+</style>

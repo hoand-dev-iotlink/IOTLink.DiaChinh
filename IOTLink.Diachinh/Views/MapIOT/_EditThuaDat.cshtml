@@ -1,0 +1,570 @@
+﻿
+<div class="modal fade bs-example-modal-lg modal-edit-shape" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="myModalLabel"> Chỉnh sửa đỉnh thửa đất</h4>
+            </div>
+            <div class="modal-body">
+                <div class="menu-tach-thua">
+                    <div style="height: 100%;overflow-y:auto">
+                        @*<div class="menu-case-edit-shap">
+                                <button type="button" class="btn btn-default btn-common-case active-case" data-case="1">Nhập điểm</button>
+                                <button type="button" class="btn btn-default btn-common-case" data-case="2">Tính toán điểm</button>
+                            </div>*@
+                        <div class="point-change">
+                            <label>Chọn điểm cần thay thế</label>
+                            <select class="col-sm-12" name="select-all-point-change"></select>
+                        </div>
+                        <div>
+                            <ul class="menu-giao-hoi">
+                                <li><a href="javascript:;" class="menu-nhap-toa-do active"><i class="fa fa-list-alt"></i> Nhập tọa độ</a></li>
+                                <li><a href="javascript:;" class="menu-cach-duong-thang"><i class="fa fa-list-alt"></i> Giao hội cách đường thẳng</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-thuan"><i class="fa fa-tachometer"></i> Giao hội thuận</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-nghich"><i class="fa fa-desktop"></i> Giao hội nghịch</a></li>
+                                <li><a href="javascript:;" class="menu-hoi-huong"><i class="fa fa-list"></i> Giao hội hướng</a></li>
+                                <li><a href="javascript:;" class="menu-doc-theo-canh"><i class="fa fa-pencil-square-o"></i> Giao hội dọc theo cạnh</a></li>
+                            </ul>
+                        </div>
+
+                        @*<div class="nhap-point">
+                                <div class="form-group">
+                                    <label>Tọa độ X</label>
+                                    <input type="text" class="form-control" name="pointx" placeholder="Tọa độ X">
+                                </div>
+                                <div class="form-group">
+                                    <label>Tọa độ Y</label>
+                                    <input type="text" class="form-control" name="pointy" placeholder="Tọa độ Y">
+                                </div>
+                                <button type="button" class="btn btn-success btn-ghi-diem-nhap">Ghi nhận</button>
+                            </div>*@
+                        @*<div class="">*@
+                        <table class="table table-hover table-point">
+                            <thead>
+                                <tr>
+                                    <th scope="col">STT</th>
+                                    <th scope="col">Điểm</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pointGhiNhan"></tbody>
+                        </table>
+                        @*</div>*@
+
+                        <div class="button-tool">
+                            <button type="button" class="btn btn-default clear-all-point" title="Xóa toàn bộ điểm thay thế"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default view-edit-shape" title="Xem kết quả chỉnh sửa"><i class="fa fa-play" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default clear-result" title="Xóa kết quả chỉnh sửa"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                            <button type="button" class="btn btn-default save-edit-shape" title="Lưu kết quả"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-eidt-shape" id="mapEditShape">
+                    <div class="footer-map-point col-xs-12 col-sm-12">
+                        <div class="header-point">
+                            <h4 class="title-giao-hoi">Giao hội</h4>
+                            <span class="btn-show-hide-point"><i class="fa fa-chevron-down" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="context-point">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-8">
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 form-giao-hoi">
+                                            <div class="col-xs-12 col-sm-10">
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc1" class="col-sm-4 control-label no-padding-right">Đỉnh A</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhA"></select>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc2" class="col-sm-4 control-label no-padding-right">Đỉnh B</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhB"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc1" class="col-sm-4 control-label no-padding-right">Đỉnh C</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhC"></select>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="sel_GHDoc2" class="col-sm-4 control-label no-padding-right">Đỉnh D</label>
+                                                        <select class="col-sm-8" id="sel_GHCDTDinhD"></select>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cách AB</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Khoảng cách (m)" id="inp_CachAB">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cách CD</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Khoảng cách (m)" id="inp_CachCD">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cạnh A-C</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Độ dài cạnh (m)" id="inp_CanhAC">
+                                                    </div>
+
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-9" class="col-sm-4 control-label no-padding-right">Cạnh B-C</label>
+                                                        <input type="text" class="col-sm-8 input-mask-distance" placeholder="Độ dài cạnh (m)" id="inp_CanhBC">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc CAB</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocCAB" disabled="">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc CBA</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocCBA" disabled="">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc APB</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocAPB">
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-6">
+                                                        <label for="form-field-select-1" class="col-sm-4 control-label no-padding-right">Góc APC</label>
+                                                        <input class="col-sm-8 input-mask-angle" type="text" id="inp_GocAPC">
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                        <div class="control-group">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                    <div class="col-xs-12 col-sm-4">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-2">
+                                                <div class="control-group">
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-2">
+                                                <div class="phương-thuc-giao-hoi-thuan">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions center">
+                                        <button type="button" class="btn btn-sm btn-warning" id="btn_Clear_edit_shape">
+                                            Làm lại
+                                            <i class="ace-icon fa fa-refresh icon-on-right bigger-110"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-warning" id="btn_Preview-edit-shape">
+                                            Xem thử
+                                            <i class="ace-icon fa fa-arrow-right icon-on-right bigger-110"></i>
+                                        </button>
+                                        <button type="button" class="btn btn-sm btn-success" id="btn_Submit-edit-shape">
+                                            Ghi nhận
+                                            <i class="ace-icon fa fa-plus icon-on-right bigger-110"></i>
+                                        </button>
+
+                                    </div>
+                                </div>
+                                <div class="col-xs-6 col-sm-2 col-md-4">
+                                    <div class="thumbnail search-thumbnail note-giao-hoi">
+                                        <img class="media-object" alt="100%x200" src="/Images/MapIOT/GiaoHoi/ghcachduongthang.png" data-holder-rendered="true" style="height: 100%; width: 100%; display: block;">
+                                        <div class="caption">
+                                            <p>Lấy ra điểm cách đường AB, CD lần lượt các khoảng là d1 và d2. Kết quả sẽ thu được là 4 điểm 1,2,3,4.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .modal-edit-shape {
+        width: 100%;
+        padding: 0px !important;
+        overflow: hidden !important;
+        height: 100%;
+    }
+
+        .modal-edit-shape .modal-dialog {
+            width: 100%;
+            padding: 5px;
+            margin: 0px;
+            height: 100%;
+        }
+
+        .modal-edit-shape .modal-header {
+            position: relative;
+        }
+
+        .modal-edit-shape .modal-body {
+            height: calc(100vh - 56px);
+            display: flex;
+            padding: 0px !important;
+        }
+
+    .map-eidt-shape {
+        height: 100%;
+        width: calc(100% - 240px);
+        background-color: #f1f1f1;
+    }
+
+    .modal-edit-shape .menu-tach-thua {
+        width: 240px;
+        height: 100%;
+        border-right: 1px solid #c3c3c3;
+        position: relative;
+    }
+
+    .map-eidt-shape .modal-body {
+        position: relative;
+    }
+
+    .menu-tach-thua ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        background-color: #f1f1f1;
+    }
+
+    .menu-tach-thua li a {
+        display: block;
+        color: #000;
+        padding: 10px 16px;
+        text-decoration: none;
+    }
+
+        .menu-tach-thua li a i {
+            font-size: 18px;
+        }
+        /* Change the link color on hover */
+        .menu-tach-thua li a:hover {
+            background-color: #48a0e2;
+            color: white;
+        }
+
+        .menu-tach-thua li a.active {
+            background-color: #48a0e2;
+            color: white;
+        }
+
+    .table-point {
+        max-height: calc(100% - 400px);
+        background-color: white;
+    }
+
+    .button-tool {
+        margin: 9px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+        .button-tool .btn-default {
+            width: 45px;
+            height: 40px;
+        }
+
+    .modal-edit-shape .modal-body .footer-map-point {
+        position: absolute;
+        bottom: 0px;
+        z-index: 10;
+        background: white;
+        width: calc(100% - 240px);
+        padding: 0px;
+        height: 390px
+    }
+
+        .modal-edit-shape .modal-body .footer-map-point .header-point {
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            align-items: center;
+            padding: 0 25px;
+            background: #49aef9;
+            color: #fff;
+            font-size: 19px;
+        }
+
+    .footer-map-point .context-point {
+        padding: 12px;
+    }
+
+        .footer-map-point .context-point label {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+    .footer-map-point select {
+        border-radius: 0;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        color: #858585;
+        background-color: #FFF;
+        border: 1px solid #D5D5D5;
+        padding: 3px 4px;
+        height: 30px;
+    }
+
+    .footer-map-point input {
+        border-radius: 0 !important;
+        color: #858585;
+        background-color: #FFF;
+        border: 1px solid #D5D5D5;
+        padding: 5px 4px 6px;
+        font-size: 14px;
+        font-family: inherit;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        -webkit-transition-duration: .1s;
+        transition-duration: .1s;
+    }
+
+    .footer-map-point .form-actions {
+        display: flex;
+        background-color: #F5F5F5;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        padding: 19px 20px 20px;
+        justify-content: center;
+    }
+
+        .footer-map-point .form-actions button {
+            border-radius: 0px;
+            padding: 7px 18px;
+            margin-left: 5px;
+        }
+
+    .footer-map-point .form-group input:disabled, .footer-map-point .form-group input[disabled] {
+        color: #848484 !important;
+        background-color: #EEE !important;
+    }
+
+    .footerHide {
+        -webkit-animation-name: animationfooter; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationfooter;
+        animation-duration: 2s;
+        bottom: -350px !important;
+    }
+
+    .footerShow {
+        -webkit-animation-name: animationfooter1; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationfooter1;
+        animation-duration: 2s;
+        bottom: 0px;
+    }
+
+    @@keyframes animationfooter {
+        0% {
+            bottom: 0px;
+        }
+
+        100% {
+            bottom: -350px;
+        }
+    }
+
+    @@-webkit-keyframes animationfooter {
+        0% {
+            bottom: 0px;
+        }
+
+        100% {
+            bottom: -350px;
+        }
+    }
+
+    @@keyframes animationfooter1 {
+        0% {
+            bottom: -350px;
+        }
+
+        100% {
+            bottom: 0px
+        }
+    }
+
+    @@-webkit-keyframes animationfooter1 {
+        0% {
+            bottom: -350px;
+        }
+
+        100% {
+            bottom: 0px
+        }
+    }
+
+    .headerHide {
+        -webkit-animation-name: animationheader; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationheader;
+        animation-duration: 2s;
+        right: -350px !important;
+    }
+
+    .headerShow {
+        -webkit-animation-name: animationheader1; /* Safari 4.0 - 8.0 */
+        -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+        animation-name: animationheader1;
+        animation-duration: 2s;
+        right: 0px;
+    }
+
+    @@keyframes animationheader {
+        0% {
+            right: 0px;
+        }
+
+        100% {
+            right: -355px;
+        }
+    }
+
+    @@-webkit-keyframes animationheader {
+        0% {
+            right: 0px;
+        }
+
+        100% {
+            right: -355px;
+        }
+    }
+
+    @@keyframes animationheader1 {
+        0% {
+            right: -355px;
+        }
+
+        100% {
+            right: 0px;
+        }
+    }
+
+    @@-webkit-keyframes animationheader1 {
+        0% {
+            right: -355px;
+        }
+
+        100% {
+            right: 0px;
+        }
+    }
+
+    .modal-edit-shape .btn-footer {
+        /*position: absolute;*/
+        bottom: 0px;
+        width: 100%;
+        display: flex;
+    }
+
+        .modal-edit-shape .btn-footer button {
+            width: 50%;
+            border-radius: 0px;
+        }
+
+    .modal-edit-shape .clearPoint {
+        cursor: pointer;
+        color: #ed4f4f;
+    }
+
+        .modal-edit-shape .clearPoint:hover {
+            cursor: pointer;
+            color: #f5a8a8;
+        }
+
+    .menu-case-edit-shap {
+        display: flex;
+    }
+
+        .menu-case-edit-shap .btn-common-case {
+            width: 50%;
+            border-radius: 0px;
+        }
+
+    .modal-edit-shape .menu-case-edit-shap .btn-default {
+        background-color: #f4f4f4;
+        color: #444;
+        width: 50%;
+        border-radius: 0px;
+        border: 0px;
+    }
+
+    .active-case {
+        background-color: #48a0e2 !important;
+        color: #fff !important;
+    }
+
+    select[name=select-all-point-change] {
+        border-radius: 0;
+        -webkit-box-shadow: none !important;
+        box-shadow: none !important;
+        color: #858585;
+        background-color: #FFF;
+        border: 1px solid #D5D5D5;
+        padding: 3px 4px;
+        height: 30px;
+    }
+
+    .nhap-point, .point-change {
+        padding: 5px;
+    }
+
+    .point-change {
+        height: 65px;
+    }
+
+    .modal-edit-shape .btn-ghi-diem-nhap {
+        width: 100%;
+        border-radius: 0px !important;
+        border: 0px !important;
+    }
+
+
+    @@media (max-height: 810px) {
+
+        .modal-edit-shape .footer-map-point .context-point {
+            padding: 5px !important;
+        }
+
+        .modal-edit-shape .col-xs-12, .modal-edit-shape .col-sm-8,
+        .modal-edit-shape .col-xs-6, .modal-edit-shape .col-sm-2,
+        .modal-edit-shape .col-md-4, .modal-edit-shape .col-sm-12,
+        .modal-edit-shape .col-sm-10, .modal-edit-shape .col-sm-4 {
+            padding-right: 5px !important;
+            padding-left: 5px !important;
+        }
+
+        .modal-edit-shape .modal-body .footer-map-point {
+            height: 320px !important;
+        }
+
+        .modal-edit-shape .footer-map-point .form-actions {
+            margin-bottom: 5px;
+            margin-top: 5px;
+        }
+
+        .modal-edit-shape .footer-map-point {
+            padding: 0px !important;
+        }
+
+        .modal-edit-shape .footerHide {
+            -webkit-animation-name: animationfooter; /* Safari 4.0 - 8.0 */
+            -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
+            animation-name: animationfooter;
+            animation-duration: 2s;
+            bottom: -280px !important;
+        }
+    }
+    /*------------------------------------------------------------*/
+
+</style>

@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutMapIOT.cshtml";
+}
+<div class="mapObject defective" id="map">
+    <div class="input-box text-center clearable-input">
+        <button type="button" class="button-search tooltip-setting" id="tooltip-searchsetting"></button><span class="tooltiptextsetting">Tìm kiếm nâng cao</span>
+        <input class="search-text" id="id-search-text" placeholder="Số tờ, Số thửa" maxlength="11" type="text" oninput="this.value = this.value.replace(/[^0-9,]/g, '').replace(/(\..*)\./g, '$1');">
+        <span data-clear-input id="clear-input-id" class="glyphicon glyphicon-remove-circle"></span>
+        <button type="button" class="button-search tooltip-search" id="tooltip-search"></button><span class="tooltiptext">Tìm kiếm</span>
+    </div>
+
+    <div class="tab-pane active" id="advSearch">
+        <div class="form">
+            <div class="note">
+                <p>Tìm kiếm nâng cao</p>
+            </div>
+
+            <div class="form-content form-search">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="number" id="text-search-soTo" class="form-control form-style" placeholder="Số hiệu tờ BĐ" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="number" id="text-search-soThua" class="form-control form-style" placeholder="Số thứ tự thửa" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="text-search-MDSuDung" class="form-control form-style" placeholder="Ký hiệu MĐSD" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" id="text-search-chuNha" class="form-control form-style" placeholder="Tên chủ sở hữu" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <select class="form-control form-style" id="lstSelectSearch-adv"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="text" id="text-search-diaChi" class="form-control form-style" placeholder="Địa chỉ" value="" />
+                        </div>
+                    </div>
+                </div>
+                <center><button type="button" class="btnSubmit" id="tooltip-search-adv">Tìm kiếm</button></center>
+            </div>
+            <div id="list-search-adv">
+            </div>
+        </div>
+    </div>
+    <div class="location-click">
+        <div class="image-click"></div>
+        <div class="content-location">
+            <div class="address-menu-click" style="font-weight: bold;"></div>
+            <div class="location-menu-click"></div>
+            <div class="location-menu-click-vn2000"></div>
+        </div>
+        <div class="close-content">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+    </div>
+    @Html.Partial("_ChuGiai")
+    @Html.Partial("_ToolRule")
+</div>
+<div id="loading-map" class="loading-map" style="display: none;">
+    <img src="~/Images/MapIOT/loading.gif" />
+</div>
+<div style="display: none;" class="download-file">
+    <a href="" target="_blank" download>Newsletter</a>
+</div>
+@Html.Partial("_DetailProperty")
+@section Stylesheet
+    {
+    <link href="~/Content/jquery-ui.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/Extra.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/select2.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/Common.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/fileinput.min.css" rel="stylesheet">
+    <link href="~/Content/MapIOT/DetailObjectProperties.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/ChuGiai.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/mapcontrol.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/MenuLeft.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/ImportFile.css" rel="stylesheet" />
+    <link href="~/Content/MapIOT/Home.css" rel="stylesheet" />
+}
+@section scripts{
+    <script src="~/Scripts/MapIOT/select2.js"></script>
+    <script src="~/Scripts/MapIOT/bootbox.min.js"></script>
+    <script src="~/Scripts/MapIOT/jsCheckInput.js"></script>
+    <script src="~/Scripts/MapIOT/turf.min.js"></script>
+    <script src="~/Scripts/FtilisScripts/WebGIS/Geodesy/Problem.js"></script>
+    <script src="~/Scripts/MapIOT/sweetalert.min.js"></script>
+    <script src="~/Scripts/MapIOT/toolTachThua.js"></script>
+    @*<script src="~/Scripts/MapIOT/toolTachThua.min.1.0.0.js"></script>*@
+    <script src="~/Scripts/MapIOT/fiolissdk@1.3.9.prod.js"></script>
+    <script src="~/Scripts/MapIOT/jquery.nicescroll.min.js"></script>
+    <script src="~/Scripts/plugins/inputmask/inputmask.js"></script>
+    <script src="~/Scripts/plugins/inputmask/jquery.inputmask.js"></script>
+    <script src="~/Scripts/MapIOT/ToolShape.js"></script>
+    <script src="~/Scripts/MapIOT/ThuaDat.js"></script>
+    @*<script src="~/Scripts/MapIOT/ToolShape.min.js"></script>
+    <script src="~/Scripts/MapIOT/ThuaDat.min.js"></script>*@
+    <script src="~/Scripts/MapIOT/UpdateThuaDat.js"></script>
+    <script src="~/Scripts/MapIOT/MenuLeft.js"></script>
+    <script src="~/Scripts/MapIOT/ImportFile.js"></script>
+    <script src="~/Scripts/MapIOT/Mode3D.js"></script>
+    @*<script src="~/Scripts/MapIOT/Mode3D.min.js"></script>*@
+    <script src="~/Scripts/MapIOT/MapControl.js"></script>
+    <script src="~/Scripts/MapIOT/TachThua.js"></script>
+    <script src="~/Scripts/MapIOT/HopThua.js"></script>
+    <script src="~/Scripts/MapIOT/EditShape.js"></script>
+    @*<script src="~/Scripts/MapIOT/TachThua.min.1.0.0.js"></script>
+    <script src="~/Scripts/MapIOT/HopThua.min.1.0.0.js"></script>
+    <script src="~/Scripts/MapIOT/EditShape.min.js"></script>*@
+    <script src="~/Scripts/MapIOT/ChuGiai.js"></script>
+    <script src="~/Scripts/MapIOT/ConfigUrl.js"></script>
+    <script src="~/Scripts/MapIOT/buttonTachThua.js"></script>
+    <script src="~/Scripts/MapIOT/SyncServiceFTI.js"></script>
+    <script src="~/Scripts/MapIOT/InAn.js"></script>
+
+    <script src="https://js.arcgis.com/4.14/"></script>
+    <script type="text/javascript">
+        var currentMaXa;
+        $(function () {
+            //d3 = window.d3;
+            lstHuyenNguoiDung = @Html.Raw(Json.Encode(ViewBag.HuyenNguoiDung));
+            currentMaXa = "@Html.Raw(ViewBag.BanDoXaID)";
+            ViewMap.CONSTS.codeDefault = currentMaXa.length > 0 ? currentMaXa : ViewMap.CONSTS.codeDefault;
+            ViewMap.init();
+            ToolShape.init();
+            UpdateThuaDat.init();
+            TachThua.init();
+            HopThua.init();
+            EditShape.init();
+            MenuLeft.init();
+            ImportFile.init();
+            EditMode3D.init();
+            MapControl.init();
+            //MapControl.initMode3D();
+            $(".object-mode-3d1").select2();
+            InAn.init();
+        })
+        function GetAllShapOnWardLatLng() {
+            ViewMap.showThuaDatSelectSubdistrict();
+        }
+    </script>
+    @Html.Partial("_TachThua")
+    @Html.Partial("_InforHopThua")
+    @Html.Partial("_UpdateThuaDat")
+    @Html.Partial("_TrichXuatFile")
+    @Html.Partial("_BienTap")
+    @Html.Partial("_NhapDuLieuFile")
+    @Html.Partial("_EditMode3D")
+    @Html.Partial("_EditThuaDat")
+}
+
