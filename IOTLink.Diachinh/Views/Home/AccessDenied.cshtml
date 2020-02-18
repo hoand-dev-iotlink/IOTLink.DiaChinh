@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "AccessDenied";
+}
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Error</title>
+</head>
+<body>
+    <hgroup>
+        <h1>Lỗi.</h1>
+        <h2>Bạn không có quyền sử dụng chức năng này.</h2>
+        @if (Request.IsAuthenticated)
+        {
+            <h2>@User.Identity.Name</h2>
+        }
+
+    </hgroup>
+</body>
+
