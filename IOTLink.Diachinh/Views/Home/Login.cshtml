@@ -92,18 +92,20 @@
     <div class="">
         <div class="login-box">
 
-
-            <!-- /.login-logo -->
-            <div class="login-box-body">
+            <div>
                 <div class="login-logo">
                     <a href="@Url.Action("index","home")">
-                        <img src="~/images/Picture1.png" style="width: 200px;" />
+                        <img src="~/images/logo.png" style="width: 250px;" />
                         @*<b>LAZO</b>*@
                     </a>
                 </div>
+            </div>
+            <!-- /.login-logo -->
+            <div class="login-box-body">
+                
 
                 <div class="form-login"></div>
-                <h4 class="title">Đăng nhập hệ thống <br /> FIOLIS</h4>
+                <h4 class="title">Đăng nhập hệ thống</h4>
                 <br />
                 @Html.AntiForgeryToken()
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
@@ -125,11 +127,6 @@
                     <div class="col-xs-12 form-group">
                         <button type="submit" id="submit-form" class="btn btn-primary btn-block btn-flat btn-lazo-login" value="Log in">Đăng nhập</button>
                     </div>
-                    <div class="col-xs-12 form-group" style="text-align:center;">
-                        <b class="version">IOT LINK</b>
-
-                    </div>
-
                     <!-- /.col -->
                 </div>
 
