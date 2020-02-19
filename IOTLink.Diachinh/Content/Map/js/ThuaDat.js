@@ -20,7 +20,7 @@
         menuclick: ".location-click",
         addressClick: ".address-menu-click",
         locationClick: ".location-menu-click",
-        locationClickVN2000:".location-menu-click-vn2000",
+        locationClickVN2000: ".location-menu-click-vn2000",
         closeClick: ".close-content",
         loading: "#loading-map",
         inforThuaDat: "#InforThuaDat",
@@ -73,7 +73,7 @@
         //map.setTileUrl("http://61.28.233.229:8080/all/2d/{z}/{x}/{y}.png");
         //map.setTileUrl("http://61.28.233.229:8080/all/3d/{z}/{x}/{y}.png", true);
         map.setPlacesEnabled(false);
-        
+
         setTimeout(function () {
             var hashUrl = window.location.hash;
             var searchParams = new URLSearchParams(hashUrl.replace('#', ''));
@@ -84,7 +84,7 @@
                 map.data.setMinZoom(13);
             }
         }, 1);
-        
+
         $(document).on('click', '.sidebar-toggle', function () {
             if ($('.sidebar-mini').hasClass('sidebar-collapse')) {
                 //$('#Version').removeClass('version-collapse');
@@ -309,7 +309,7 @@
         });
 
         map.addListener("idle", (args) => {
-            setTimeout(function () { UpdateUrl(args.camera.getTarget().lat, args.camera.getTarget().lng, args.camera.getZoom(), null, null, null);});         
+            setTimeout(function () { UpdateUrl(args.camera.getTarget().lat, args.camera.getTarget().lng, args.camera.getZoom(), null, null, null); });
         });
     },
     setStartUp: function () {
@@ -358,7 +358,7 @@
         //        polyline["ObjectId"] = data.properties.ObjectId;
         //        ListPolyline.push(polyline);
         //    }
-            
+
         //}
 
     },
@@ -437,7 +437,7 @@
             }
         });
     },
-    getConvertVN2000: function (lat,lng) {
+    getConvertVN2000: function (lat, lng) {
         $.ajax({
             type: "GET",
             url: ViewMap.GLOBAL.url + "/v2/api/admin-level/wgs84-vn2000",
@@ -662,7 +662,7 @@
                         $(ViewMap.SELECTORS.SoToBD).text((propertie.SoHieuToBanDo != null && propertie.SoHieuToBanDo != 0 ? propertie.SoHieuToBanDo : ''));
                         $(ViewMap.SELECTORS.SoThuaOld).text((propertie.SoThuTuThuaCu != null && propertie.SoThuTuThuaCu != 0) ? propertie.SoThuTuThuaCu : '');
                         $(ViewMap.SELECTORS.SoToOld).text((propertie.SoHieuToBanDoCu != null && propertie.SoHieuToBanDoCu != 0) ? propertie.SoHieuToBanDoCu : '');
-                        $(ViewMap.SELECTORS.DientichBD).text((propertie.DienTich != null && propertie.DienTich != 0) ? propertie.DienTich: '');
+                        $(ViewMap.SELECTORS.DientichBD).text((propertie.DienTich != null && propertie.DienTich != 0) ? propertie.DienTich : '');
                         $(ViewMap.SELECTORS.DientichPL).text((propertie.DienTichPhapLy != null && propertie.DienTichPhapLy != 0) ? propertie.DienTichPhapLy : '');
                         $(ViewMap.SELECTORS.KHDTC).text(propertie.KyHieuDoiTuong);
                         $(ViewMap.SELECTORS.MucDichSuDung).text(ViewMap.convertMucDichSuDung(propertie.KyHieuMucDichSuDung));
@@ -682,7 +682,7 @@
                         setTimeout(function () {
                             ViewMap.setSelectThuaDatSearch(data.result.features[0]);
                         }, 1);
-                       
+
                         ////UpdateURL
                         UpdateUrl(null, null, null, null, propertie.SoHieuToBanDo, propertie.SoThuTuThua);
                     } else {
@@ -782,7 +782,7 @@
             }
             return data;
         }
-        
+
     },
     //show hide loading
     showLoadingInfoThuaDat: function (isCheck) {
@@ -837,7 +837,7 @@
             url: ViewMap.GLOBAL.url + "/v2/api/admin-level/children",
             data: {
                 parentId: parentid,
-                code : parentcode,
+                code: parentcode,
                 key: ViewMap.CONSTS.key
             },
             async: false,
@@ -851,7 +851,7 @@
                     }
                     $(ViewMap.SELECTORS.lstSelectSearch).append(selecthtml);
                     result = data.result;
-                } else {
+                } else if (data.code != "code_not_found") {
                     swal({
                         title: "Thông báo",
                         text: "Lỗi! Không lấy được dữ liệu địa chính",
@@ -887,7 +887,7 @@
     convertMDSD: function (mdsd) {
         let listMDSD = mdsd.split(",");
         let str = "";
-        $.each(listMDSD, function (i,obj) {
+        $.each(listMDSD, function (i, obj) {
             if (str.length > 1) {
                 str += "+";
             }
