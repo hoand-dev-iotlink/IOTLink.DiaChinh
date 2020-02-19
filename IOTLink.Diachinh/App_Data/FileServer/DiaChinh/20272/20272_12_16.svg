@@ -1,0 +1,163 @@
+<svg width='900' height='1000' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'>
+ <defs>
+  <pattern height='10' id='pattern' patternTransform='rotate(45 50 50)' patternUnits='userSpaceOnUse' width='8'>
+   <line id='pattern_svg_2' stroke='#a6a6a6' stroke-width='7px' y2='10'/>
+  </pattern>
+  <marker id='arrow' markerHeight='10' markerUnits='strokeWidth' markerWidth='10' orient='auto' refX='0' refY='3'>
+   <path d='m0,0l0,6l7,-3l-7,-3z' fill='#000' id='svg_2'/>
+  </marker>
+ </defs>
+ <g class='layer' display='none' id='adjacent-lands'>
+  <title>Thửa liền kề</title>
+  <g id='svg_1' transform='translate(240, 240)'>
+   <svg height='420' id='svg_3' preserveAspectRatio='xMinYMin slice' width='420'>
+    <path d='m430.337,300l-90.84,244.748l-76.481,-28.392l90.84,-244.749l76.481,28.393' fill='none' id='svg_4' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined,
+    <path d='m-1638.121,442.241l-43.894,94.74l-42.785,-19.826l59.559,-129.121l34.169,-74.082l34.186,-74.083l11.259,-24.411l58.939,-130.655l45.494,18.765l-19.728,42.589l-34.3,74.017l-34.299,74.033l-34.3,74.017l-34.3,74.017' fill='none' id='svg_5' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined,
+    <path d='m-1638.121,442.241l-43.894,94.74l-42.785,-19.826l59.559,-129.121l34.169,-74.082l34.186,-74.083l11.259,-24.411l58.939,-130.655l45.494,18.765l-19.728,42.589l-34.3,74.017l-34.299,74.033l-34.3,74.017l-34.3,74.017' fill='none' id='svg_6' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined</svg>
+  </g>
+ </g>
+ <g class='layer' id='cordinates-table'>
+  <title>Bảng tọa độ góc ranh</title>
+  <g class='layer' id='table' xmlns='http://www.w3.org/2000/svg'>
+   <text fill='#000' font-size='10px' font-weight='bold' id='svg_7' text-anchor='middle' x='760' y='705'>BẢNG LIỆT KÊ TỌA ĐỘ GÓC RANH</text>
+   <rect fill='none' height='15' id='header' stroke='#000' width='260' x='635' xmlns='http://www.w3.org/2000/svg' y='710'/>
+   <line fill='none' id='svg_8' stroke='#000' x1='635' x2='635' y1='725' y2='879'/>
+   <line fill='none' id='svg_9' stroke='#000' x1='675' x2='675' y1='710' y2='879'/>
+   <line fill='none' id='svg_10' stroke='#000' x1='745' x2='745' y1='710' y2='879'/>
+   <line fill='none' id='svg_11' stroke='#000' x1='825' x2='825' y1='710' y2='879'/>
+   <line fill='none' id='svg_12' stroke='#000' x1='895' x2='895' y1='725' y2='879'/>
+   <line fill='none' id='svg_13' stroke='#000' x1='635' x2='895' y1='879' y2='879'/>
+   <text fill='#000' font-size='10px' id='svg_14' text-anchor='middle' x='655' y='720'>
+    <tspan id='svg_15' x='655' y='720'>Điểm</tspan>
+    <tspan id='svg_16' x='710' y='720'>X (m)</tspan>
+    <tspan id='svg_17' x='785' y='720'>Y (m)</tspan>
+    <tspan id='svg_18' x='860' y='720'>Cạnh (m)</tspan>
+   </text>
+   <text font-size='10px' id='svg_19' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_20' text-anchor='start' x='645' y='737'>1</tspan>
+    <tspan id='svg_21' x='710' y='737'>552468.23</tspan>
+    <tspan id='svg_22' x='785' y='737'>1778773.73</tspan>
+    <tspan id='svg_23' x='860' y='737'>9.73</tspan>
+   </text>
+   <text font-size='10px' id='svg_24' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_25' text-anchor='start' x='645' y='749'>2</tspan>
+    <tspan id='svg_26' x='710' y='749'>552459.11</tspan>
+    <tspan id='svg_27' x='785' y='749'>1778777.11</tspan>
+    <tspan id='svg_28' x='860' y='749'>16.00</tspan>
+   </text>
+   <text font-size='10px' id='svg_29' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_30' text-anchor='start' x='645' y='761'>3</tspan>
+    <tspan id='svg_31' x='710' y='761'>552464.67</tspan>
+    <tspan id='svg_32' x='785' y='761'>1778792.11</tspan>
+    <tspan id='svg_33' x='860' y='761'>5.74</tspan>
+   </text>
+   <text font-size='10px' id='svg_34' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_35' text-anchor='start' x='645' y='773'>4</tspan>
+    <tspan id='svg_36' x='710' y='773'>552470.05</tspan>
+    <tspan id='svg_37' x='785' y='773'>1778790.11</tspan>
+    <tspan id='svg_38' x='860' y='773'>0.68</tspan>
+   </text>
+   <text font-size='10px' id='svg_39' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_40' text-anchor='start' x='645' y='785'>5</tspan>
+    <tspan id='svg_41' x='710' y='785'>552470.67</tspan>
+    <tspan id='svg_42' x='785' y='785'>1778789.83</tspan>
+    <tspan id='svg_43' x='860' y='785'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_44' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_45' text-anchor='start' x='645' y='797'>6</tspan>
+    <tspan id='svg_46' x='710' y='797'>552471.31</tspan>
+    <tspan id='svg_47' x='785' y='797'>1778789.36</tspan>
+    <tspan id='svg_48' x='860' y='797'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_49' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_50' text-anchor='start' x='645' y='809'>7</tspan>
+    <tspan id='svg_51' x='710' y='809'>552471.85</tspan>
+    <tspan id='svg_52' x='785' y='809'>1778788.77</tspan>
+    <tspan id='svg_53' x='860' y='809'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_54' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_55' text-anchor='start' x='645' y='821'>8</tspan>
+    <tspan id='svg_56' x='710' y='821'>552472.27</tspan>
+    <tspan id='svg_57' x='785' y='821'>1778788.08</tspan>
+    <tspan id='svg_58' x='860' y='821'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_59' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_60' text-anchor='start' x='645' y='833'>9</tspan>
+    <tspan id='svg_61' x='710' y='833'>552472.54</tspan>
+    <tspan id='svg_62' x='785' y='833'>1778787.33</tspan>
+    <tspan id='svg_63' x='860' y='833'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_64' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_65' text-anchor='start' x='645' y='845'>10</tspan>
+    <tspan id='svg_66' x='710' y='845'>552472.65</tspan>
+    <tspan id='svg_67' x='785' y='845'>1778786.54</tspan>
+    <tspan id='svg_68' x='860' y='845'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_69' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_70' text-anchor='start' x='645' y='857'>11</tspan>
+    <tspan id='svg_71' x='710' y='857'>552472.61</tspan>
+    <tspan id='svg_72' x='785' y='857'>1778785.74</tspan>
+    <tspan id='svg_73' x='860' y='857'>0.80</tspan>
+   </text>
+   <text font-size='10px' id='svg_74' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_75' text-anchor='start' x='645' y='869'>12</tspan>
+    <tspan id='svg_76' x='710' y='869'>552472.40</tspan>
+    <tspan id='svg_77' x='785' y='869'>1778784.97</tspan>
+    <tspan id='svg_78' x='860' y='869'>11.99</tspan>
+   </text>
+  </g>
+ </g>
+ <g class='layer' id='land-info' xmlns='http://www.w3.org/2000/svg'>
+  <title>Thông tin thửa đất</title>
+  <text fill='#4a84e3' font-size='10px' font-weight='bold' id='svg_79' text-anchor='right' x='40' y='40'>LÔ ĐẤT SỐ : 16, TỜ BẢN ĐỒ SỐ : 12,
+        PHƯỜNG: AN HẢI BẮC,
+        QUẬN: SƠN TRÀ,
+        THÀNH PHỐ : ĐÀ NẴNG</text>
+ </g>
+ <g class='layer' id='main-land'>
+  <title>Thửa chính</title>
+  <path d='m488.33,600l-148.833,-55.252l90.84,-244.748l87.773,32.586l10.003,4.716l10.557,7.653l8.828,9.595l6.739,11.161l4.406,12.271l1.86,12.907l-0.734,13.022l-3.329,12.597l-68.11,183.492' fill='none' id='svg_80' stroke='#000' stroke-width='1px'/>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_81' stroke='#000' stroke-width='0' text-anchor='middle' x='435' xml:space='preserve' y='453'>ODT</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_82' stroke='#000' stroke-width='0' text-anchor='middle' x='465' xml:space='preserve' y='445'>16 (12)</text>
+  <line fill='none' id='svg_83' stroke='#000' x1='450' x2='480' y1='450' y2='450'/>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_84' stroke='#000' stroke-width='0' text-anchor='middle' x='465' xml:space='preserve' y='461'>152.2</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_85' stroke='#000' stroke-width='0' text-anchor='middle' x='489.86703' xml:space='preserve' y='609.8812'>1</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_86' stroke='#000' stroke-width='0' text-anchor='middle' x='331.51587' xml:space='preserve' y='550.77368'>2</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_87' stroke='#000' stroke-width='0' text-anchor='middle' x='428.08571' xml:space='preserve' y='290.25676'>3</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_88' stroke='#000' stroke-width='0' text-anchor='middle' x='522.23118' xml:space='preserve' y='323.4751'>4</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_89' stroke='#000' stroke-width='0' text-anchor='middle' x='532.99873' xml:space='preserve' y='328.57715'>5</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_90' stroke='#000' stroke-width='0' text-anchor='middle' x='544.41199' xml:space='preserve' y='336.76789'>6</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_91' stroke='#000' stroke-width='0' text-anchor='middle' x='554.03705' xml:space='preserve' y='346.98418'>7</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_92' stroke='#000' stroke-width='0' text-anchor='middle' x='561.5069' xml:space='preserve' y='358.84454'>8</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_93' stroke='#000' stroke-width='0' text-anchor='middle' x='566.56977' xml:space='preserve' y='371.88574'>9</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_94' stroke='#000' stroke-width='0' text-anchor='middle' x='569.00619' xml:space='preserve' y='385.62643'>10</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_95' stroke='#000' stroke-width='0' text-anchor='middle' x='568.76173' xml:space='preserve' y='399.53726'>11</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_96' stroke='#000' stroke-width='0' text-anchor='middle' x='565.82999' xml:space='preserve' y='413.06874'>12</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_97' stroke='#000' stroke-width='0' text-anchor='middle' x='409.91352' xml:space='preserve' y='568.37422'>9.73</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_98' stroke='#000' stroke-width='0' text-anchor='middle' x='380.91705' xml:space='preserve' y='418.37422'>16.00</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_99' stroke='#000' stroke-width='0' text-anchor='middle' x='470.22355' xml:space='preserve' y='312.29317'>5.74</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_100' stroke='#000' stroke-width='0' text-anchor='middle' x='519.11123' xml:space='preserve' y='330.94425'>0.68</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_101' stroke='#000' stroke-width='0' text-anchor='middle' x='529.39135' xml:space='preserve' y='337.12864'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_102' stroke='#000' stroke-width='0' text-anchor='middle' x='539.08404' xml:space='preserve' y='345.75252'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_103' stroke='#000' stroke-width='0' text-anchor='middle' x='546.86756' xml:space='preserve' y='356.13054'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_104' stroke='#000' stroke-width='0' text-anchor='middle' x='552.44003' xml:space='preserve' y='367.84661'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_105' stroke='#000' stroke-width='0' text-anchor='middle' x='555.57302' xml:space='preserve' y='380.43568'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_106' stroke='#000' stroke-width='0' text-anchor='middle' x='556.13598' xml:space='preserve' y='393.40005'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_107' stroke='#000' stroke-width='0' text-anchor='middle' x='554.10443' xml:space='preserve' y='406.20941'>0.80</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_108' stroke='#000' stroke-width='0' text-anchor='middle' x='518.3851' xml:space='preserve' y='504.25401'>11.99</text>
+  <circle cx='488.33016' cy='600' fill='#000' id='svg_109' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='339.49687' cy='544.74844' fill='#000' id='svg_110' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='430.33723' cy='300' fill='#000' id='svg_111' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='518.10987' cy='332.58635' fill='#000' id='svg_112' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='528.11259' cy='337.30215' fill='#000' id='svg_113' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='538.67011' cy='344.95513' fill='#000' id='svg_114' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='547.49796' cy='354.5499' fill='#000' id='svg_115' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='554.23715' cy='365.71118' fill='#000' id='svg_116' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='558.64292' cy='377.98205' fill='#000' id='svg_117' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='560.50313' cy='390.88931' fill='#000' id='svg_118' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='559.76883' cy='403.9108' fill='#000' id='svg_119' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='556.44003' cy='416.50802' fill='#000' id='svg_120' r='2' stroke='#000' stroke-width='1px'/>
+  <text fill='#000' font-family='serif' font-size='35px' font-weight='bold' id='svg_121' text-anchor='middle' x='800' xml:space='preserve' y='325'>B</text>
+  <line id='svg_122' marker-end='url(#arrow)' stroke='#000' stroke-width='2' x1='800' x2='800' y1='400' y2='250'/>
+ </g>
+</svg>

@@ -1,6 +1,6 @@
 ﻿var InAn = {
     GLOBAL: {
-
+        ThuaDat: null,
     },
     CONSTS: {
 
@@ -179,11 +179,17 @@
     },
     InTrichLuc: function () {
         var result = ViewMap.GLOBAL.commonData.features.find(x => x.properties.info != undefined && x.properties.info == "vn2000");
+        //InAn.showThuaDat(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua);
         if (result != null && result != undefined) {
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    var param = InAn.GetDatInAn();
+                    param.DsDinh = bangToaDo;
+                    InAn.InAnTrichLucNew(param);
+                    //InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                }
                 return;
             }
         }
@@ -202,7 +208,14 @@
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.TrichLucDocEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    var param = InAn.GetDatInAn();
+                    param.TypeFile = "DOC";
+                    param.DsDinh = bangToaDo;
+                    InAn.TrichLucDocEventNew(param);
+                    //InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                }
+                //InAn.TrichLucDocEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
                 return;
             }
         }
@@ -220,7 +233,14 @@
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.TrichLucPDFEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    if (ViewMap.GLOBAL.commonData != null) {
+                        var param = InAn.GetDatInAn();
+                        param.TypeFile = "PDF";
+                        param.DsDinh = bangToaDo;
+                        InAn.TrichLucDocEventNew(param);
+                    }
+                }
                 return;
             }
         }
@@ -239,7 +259,13 @@
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.InAnEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    var param = InAn.GetDatInAn();
+                    param.DsDinh = bangToaDo;
+                    InAn.InAnEvent(param);
+                    //InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                }
+                //InAn.InAnEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
                 return;
             }
         }
@@ -257,7 +283,14 @@
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.DownloadDocEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    var param = InAn.GetDatInAn();
+                    param.TypeFile = "DOC";
+                    param.DsDinh = bangToaDo;
+                    InAn.DownloadDocEvent(param);
+                    //InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                }
+                //InAn.DownloadDocEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
                 return;
             }
         }
@@ -275,7 +308,14 @@
             ViewMap.showLoading(true);
             var bangToaDo = InAn.CalculateBangToaDo(result.geometry);
             if (bangToaDo.length > 0 && bangToaDo != []) {
-                InAn.DownloadPdfEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                if (ViewMap.GLOBAL.commonData != null) {
+                    var param = InAn.GetDatInAn();
+                    param.TypeFile = "PDF";
+                    param.DsDinh = bangToaDo;
+                    InAn.DownloadDocEvent(param);
+                    //InAn.TrichLucEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
+                }
+                //InAn.DownloadPdfEvent(result.properties.MaXa, result.properties.SoHieuToBanDo, result.properties.SoThuTuThua, result.properties.DiaChi, result.properties.KyHieuMucDichSuDung, result.properties.TenChu, bangToaDo);
                 return;
             }
         }
@@ -328,7 +368,7 @@
                     obj2.Toadox = Geometry.coordinates[j2][k2][0];
                     obj2.Toadoy = Geometry.coordinates[j2][k2][1];
                     var dodaicanh2 = Problem.getLengthInverseProblem(Geometry.coordinates[j2][k2][0], Geometry.coordinates[j2][k2][1], Geometry.coordinates[j2][k2 + 1][0], Geometry.coordinates[j2][k2 + 1][1]);
-                    obj.DoDai = dodaicanh2;
+                    obj2.DoDai = dodaicanh2;
                     bangtoado.push(obj2);
                 }
                 // })
@@ -336,19 +376,19 @@
         }
         return bangtoado;
     },
-    InAnEvent: function (MaXa, SoHieuToBanDo, SoThuTuThua, DiaChi, KyHieuMucDichSuDung, TenChu, BangToaDo) {
-        var kvhc = MaXa;
-        var soto = SoHieuToBanDo;
-        var sothua = SoThuTuThua;
-        var diachi = DiaChi;
-        var mdsd = KyHieuMucDichSuDung;
-        var tenchu = TenChu;
-        var bangtoado = BangToaDo;
+    InAnEvent: function (param) {
+        //var kvhc = MaXa;
+        //var soto = SoHieuToBanDo;
+        //var sothua = SoThuTuThua;
+        //var diachi = DiaChi;
+        //var mdsd = KyHieuMucDichSuDung;
+        //var tenchu = TenChu;
+        //var bangtoado = BangToaDo;
 
         $.ajax({
             type: "POST",
             url: "/InAn/Inhskt",
-            data: JSON.stringify({ SOTHUTUTHUA: sothua, SOHIEUTOBANDO: soto, MAXA: kvhc, tenchu: tenchu, mdsddat: mdsd, diachi: diachi, bangtoado: bangtoado }),
+            data: JSON.stringify(param),
             contentType: "application/json; charset=utf-8",
             dataType: "html",
             async: true,
@@ -392,19 +432,19 @@
             }
         });
     },
-    DownloadDocEvent: function (MaXa, SoHieuToBanDo, SoThuTuThua, DiaChi, KyHieuMucDichSuDung, TenChu, BangToaDo) {
-        var kvhc = MaXa;
-        var soto = SoHieuToBanDo;
-        var sothua = SoThuTuThua;
-        var diachi = DiaChi;
-        var mdsd = KyHieuMucDichSuDung;
-        var tenchu = TenChu;
-        var bangtoado = BangToaDo;
+    DownloadDocEvent: function (param) {
+        //var kvhc = MaXa;
+        //var soto = SoHieuToBanDo;
+        //var sothua = SoThuTuThua;
+        //var diachi = DiaChi;
+        //var mdsd = KyHieuMucDichSuDung;
+        //var tenchu = TenChu;
+        //var bangtoado = BangToaDo;
 
         $.ajax({
             type: "POST",
             url: "/InAn/DownloadFile_hskt",
-            data: JSON.stringify({ SOTHUTUTHUA: sothua, SOHIEUTOBANDO: soto, MAXA: kvhc, tenchu: tenchu, mdsddat: mdsd, diachi: diachi, type: "doc", bangtoado: bangtoado }),
+            data: JSON.stringify(param),
             contentType: "application/json; charset=utf-8",
             dataType: "json",
             async: true,
@@ -488,16 +528,16 @@
         var bangtoado = BangToaDo;
         $.ajax({
             type: "POST",
-            url: "/InAnNew/InTrichLuc",
+            url: "/InAn/InTrichLuc",
             data: JSON.stringify({ SOTHUTUTHUA: sothua, SOHIEUTOBANDO: soto, MAXA: kvhc, tenchu: tenchu, mdsddat: mdsd, diachi: diachi, bangtoado: bangtoado }),
             contentType: "application/json; charset=utf-8",
             dataType: "html",
-            async:true,
+            async: true,
             success: function (response) {
                 //var w = window.open();
                 //$(w.document.body).html(response);
                 ViewMap.showLoading(false);
-                if (response.indexOf("error image") >=0) {
+                if (response.indexOf("error image") >= 0) {
                     swal({
                         title: "Thông báo",
                         text: "Vui lòng vào biên tập để lưu hình",
@@ -512,7 +552,7 @@
                         $(popup.document.body).html(response);
                     };
                 }
-                
+
             },
             failure: function (response) {
                 ViewMap.showLoading(false);
@@ -818,5 +858,147 @@
     dowloadFile: function (response) {
         $(".download-file a").attr("href", response);
         setTimeout(function () { $(".download-file a")[0].click(); }, 100);
-    }
+    },
+    showThuaDat: function (code, soto, sothua) {
+        $.ajax({
+            type: "GET",
+            url: ViewMap.GLOBAL.url + "/v2/api/land/find-info",
+            data: {
+                code: code,
+                soTo: soto,
+                soThua: sothua,
+                //objectId: objectId,
+                key: ViewMap.CONSTS.key
+            },
+            async: false,
+            success: function (data) {
+                if (data.result !== null && typeof data.result !== "undefined") {
+                    if (data.result.features.length > 0) {
+                        InAn.GLOBAL.ThuaDat = data.result;
+                    } else {
+                        bootbox.alert("Phường/Xã này chưa có dữ liệu");
+                    }
+                } else {
+                    bootbox.alert("Lỗi hệ thống");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                let messageErorr = AppCommon.getMessageErrorReuqest(jqXHR, errorThrown);
+                console.log(messageErorr);
+                ViewMap.showLoading(false);
+            }
+        });
+    },
+    InAnTrichLucNew: function (param) {
+        $.ajax({
+            type: "POST",
+            url: "/InAn/InTrichLuc",
+            data: JSON.stringify(param),
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            async: true,
+            success: function (response) {
+                //var w = window.open();
+                //$(w.document.body).html(response);
+                ViewMap.showLoading(false);
+                if (response.indexOf("error image") >= 0) {
+                    swal({
+                        title: "Thông báo",
+                        text: "Vui lòng vào biên tập để lưu hình",
+                        icon: "error",
+                        button: "Đóng",
+                    }).then((value) => {
+                    });
+                } else {
+                    var popup = window.open('/printhtml', '_blank');
+                    popup.onload = function () {
+                        $(popup.document.head).html('<meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Hệ thống thông tin đất đai quốc gia - FIOLIS</title>');
+                        $(popup.document.body).html(response);
+                    };
+                }
+
+            },
+            failure: function (response) {
+                ViewMap.showLoading(false);
+                swal({
+                    title: "Thông báo",
+                    text: "Lỗi hệ thống",
+                    icon: "error",
+                    button: "Đóng",
+                }).then((value) => {
+                });
+            },
+            error: function (response) {
+                ViewMap.showLoading(false);
+                swal({
+                    title: "Thông báo",
+                    text: "Lỗi hệ thống",
+                    icon: "error",
+                    button: "Đóng",
+                }).then((value) => {
+                });
+            }
+        });
+    },
+    GetDatInAn: function () {
+        var data = ViewMap.GLOBAL.commonData.features[0];
+        var Xa; var Huyen; var Tinh;
+        if (typeof ViewMap.GLOBAL.commonData.capHanhChinh != "undefined") {
+            Xa = ViewMap.GLOBAL.commonData.capHanhChinh.find(x => x.level == 3);
+            Huyen = ViewMap.GLOBAL.commonData.capHanhChinh.find(x => x.level == 2);
+            Tinh = ViewMap.GLOBAL.commonData.capHanhChinh.find(x => x.level == 1);
+        } else {
+            Xa = data.properties.capHanhChinh.find(x => x.level == 3);
+            Huyen = data.properties.capHanhChinh.find(x => x.level == 2);
+            Tinh = data.properties.capHanhChinh.find(x => x.level == 1);
+        }
+
+        var param = {
+            MaXa: data.properties.MaXa,
+            SOTHUTHUTHUA: data.properties.SoThuTuThua,
+            SOTOBANDO: data.properties.SoHieuToBanDo,
+            DIENTICH: data.properties.DienTich,
+            DIACHI: data.properties.DiaChi,
+            TENCHU: data.properties.TenChu,
+            MUCDICHSUDUNG: data.properties.TenMucDichSuDung,
+            XA: Xa.description + " " + Xa.name,
+            HUYEN: Huyen.description + " " + Huyen.name,
+            TINH: Tinh.description + " " + Tinh.name,
+        }
+        return param;
+    },
+    TrichLucDocEventNew: function (param) {
+        $.ajax({
+            type: "POST",
+            url: "/InAn/DownloadFile",
+            data: JSON.stringify(param),
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            async: true,
+            success: function (response) {
+                ViewMap.showLoading(false);
+                InAn.dowloadFile(response);
+            },
+            failure: function (response) {
+                ViewMap.showLoading(false);
+                swal({
+                    title: "Thông báo",
+                    text: "Lỗi hệ thống",
+                    icon: "error",
+                    button: "Đóng",
+                }).then((value) => {
+                });
+            },
+            error: function (response) {
+                ViewMap.showLoading(false);
+                swal({
+                    title: "Thông báo",
+                    text: "Lỗi hệ thống",
+                    icon: "error",
+                    button: "Đóng",
+                }).then((value) => {
+                });
+            }
+        });
+    },
 };

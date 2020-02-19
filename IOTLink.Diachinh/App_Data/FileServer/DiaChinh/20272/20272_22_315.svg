@@ -1,0 +1,96 @@
+<svg width='900' height='1000' xmlns='http://www.w3.org/2000/svg' xmlns:svg='http://www.w3.org/2000/svg'>
+ <defs>
+  <pattern height='10' id='pattern' patternTransform='rotate(45 50 50)' patternUnits='userSpaceOnUse' width='8'>
+   <line id='pattern_svg_2' stroke='#a6a6a6' stroke-width='7px' y2='10'/>
+  </pattern>
+  <marker id='arrow' markerHeight='10' markerUnits='strokeWidth' markerWidth='10' orient='auto' refX='0' refY='3'>
+   <path d='m0,0l0,6l7,-3l-7,-3z' fill='#000' id='svg_2'/>
+  </marker>
+ </defs>
+ <g class='layer' display='none' id='adjacent-lands'>
+  <title>Thửa liền kề</title>
+  <g id='svg_1' transform='translate(240, 240)'>
+   <svg height='420' id='svg_3' preserveAspectRatio='xMinYMin slice' width='420'>
+    <path d='m600,466.454l-274.461,-101.908l25.54,-68.795l68.325,25.363l205.563,76.325l-24.967,69.015' fill='none' id='svg_4' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined,
+    <path d='m-2930.295,-926.618l-319.712,874.739l-0.925,-770.468l48.349,-134.728l39.424,-112.226l19.992,-54.983l19.55,-44.988l3.567,-69.426l-1.321,-28.93l-3.156,-27.345l-14.149,-56.876l-12.007,-31.382l-13.371,-21.253l-22.325,-31.19l-12.491,-16.572l-47.277,-41.714l-5.607,-3.391l-0.352,-299.251l20.02,4.007l172.685,34.537l72.215,14.443l99.912,22.985l171.613,39.498l171.628,39.498l171.627,39.498l171.628,39.498l171.643,39.498l84.617,-341.978l-177.279,-40.79l-171.627,-39.498l-171.628,-39.483l-171.643,-39.498l-171.613,-39.498l-104.843,-24.145l-77.191,-15.441l-172.685,-34.508l-89.52,-17.907l-0.264,-221.297l9.717,-3.978l25.686,-21.283l27.301,-101.57l20.549,-85.719l37.135,8.366l4.99,-21.723l154.396,0.661l-16.424,68.193l-34.273,142.169l54.308,87.788l271.76,62.543l50.609,-209.952l36.445,-151.211l37.751,-0.029l-3.067,12.711l-25.789,107.001l-25.789,107.016l-34.405,142.683l243.167,55.967l53.222,-32.937l23.353,-96.933l25.789,-107.001l25.803,-107.016l19.727,-81.858l203.875,-0.235l-3.288,13.621l-25.803,107.016l-25.789,107.001l-25.789,107.016l-24.791,102.818l32.599,52.679l243.139,55.952l35.549,-142.39l26.655,-106.795l26.655,-106.796l26.655,-106.811l20.887,-83.678l252.825,-0.294l-8.733,41.098l-6.224,24.233l-0.425,5.02l0.44,5.005l0.543,2.466l1.688,4.727l2.495,4.374l3.185,3.889l3.817,3.288l4.315,2.583l4.697,1.806l145.795,29.15l192.734,-25.055l218.054,38.485l163.672,28.49l155.864,28.02l51.328,10.01l357.082,151.681l-28.68,67.547l-329.018,-139.762l-10.421,99.222l-8.015,76.324l-8.014,76.325l-4.594,43.711l-12.256,28.856l-28.68,67.548l-28.695,67.532l-28.681,67.548l-16.424,38.676l-188.449,-11.376l-1.497,44.503l-2.642,78.6l-2.642,78.6l-2.642,78.614l-2.627,78.6l-2.642,78.614l-2.642,78.6l-2.642,78.615l-3.171,94.275l-0.983,29.341l-12.256,28.857l-28.695,67.547l-28.681,67.548l-46.074,108.483l147.806,54.881l6.268,2.011l6.414,1.438l7.075,0.895l-93.777,180.317l-4.154,-2.128l-5.724,-2.334l-289.065,-107.207l-5.108,-0.924l-2.598,-0.118l-5.181,0.455l-5.02,1.365l-4.697,2.231l-2.187,1.41l-3.934,3.375l-1.746,1.953l-2.907,4.3l-2.128,4.741l-1.233,5.049l-4.726,72.905l-5.035,77.587l-5.019,77.587l-5.035,77.602l-5.034,77.587l-5.02,77.601l-5.607,86.394l-25.804,70.439l-25.803,70.395l-25.804,70.409l-25.804,70.424l-8.102,22.12l-16.263,48.818l-23.69,71.158l-23.704,71.144l-23.69,71.158l-14.884,44.679l-8.029,26.743l-21.576,71.819l-21.576,71.818l-21.577,71.833l-20.314,67.636l-0.954,5.02l-0.088,5.108l0.807,5.049l1.674,4.814l2.48,4.477l3.215,3.963l3.86,3.346l4.374,2.628l4.77,1.834l126.905,36.475l6.223,1.497l6.326,0.939l6.385,0.397l6.399,-0.162l6.356,-0.719l5.078,-1.028l0.206,96.801l-183.634,-27.668l-204.947,-27.976l25.731,-118.054l0.954,-19.301l94.642,19.022l3.024,-2.113l1.923,-1.703l3.361,-3.875l2.627,-4.403l1.835,-4.785l50.022,-166.637l31.689,-105.578l8.763,-29.209l2.055,-6.854l67.283,-202.363l34.273,-103.068l9.849,-26.949l96.697,-264.582l1.615,-47.996l-246.147,-21.239l-24.38,115.338l-19.272,-2.598l8.087,-35.74l17.819,-78.732l5.284,-21.665l259.548,24.028l14.634,-162.469l5.343,-59.196l6.047,-66.564l0.998,-90.87l-8.998,-0.484l5.079,-57.273l11.757,1.277l13.841,-78.967l-2.598,-0.484l20.725,-121.445l5.783,1.013l10.01,-102.554l2.011,-86.026l5.123,-68.575l12.946,-72.391l7.485,-145.002l-7.97,-1.248l4.624,-97.285l-3.215,-95.053l19.023,-191.208l5.666,-44.797l9.423,-89.403l4.741,-88.8l3.199,-88.42l-8.058,-42.639l20.505,-198.385l9.511,-109.32l-6.795,-33.202l-25.745,-32.658l-18.157,-11.977l-50.932,-19.081l-217.011,-40.614l-18.539,103.773l-3.61,20.563l-2.936,-0.587l-22.604,90.709l-13.122,-2.231l-26.933,131.073l-34.082,119.888l115.969,20.681l-1.482,6.371l-117.672,-25.246l-26.626,121.87l-5.093,-0.925l-50.888,197.475l-1.82,-0.381l-43.99,180.067l-81.961,276.09l-54.454,203.009l-26.567,98.694l-26.039,109.408l-51.651,180.435l-53.486,185.16l-52.326,183.224l-53.516,183.81l-23.822,86.188l-27.154,85.454l-27.183,89.227l-26.112,86.276l-57.053,195.861l251.886,68.325l232.688,46.147l-2.378,17.761l-106.546,-19.14l-102.172,-18.348l-275.65,-73.888l-27.359,95.215l-28.886,96.977l-30.017,128.724l-19.961,69.015l-145.267,-34.39l24.468,-80.097l437.737,-1506.341l65.727,-278.467l-27.007,-42.933l24.791,-96.404l42.874,-31.102l71.921,-297.975l-673.242,-154.058l-257.963,699.193' fill='none' id='svg_5' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined
+    <path d='m-957.992,-2390.775l0.191,-1.732l-205.372,-33.92l-12.432,146.235l-6.268,173.741l-10.788,184.075l-4.668,79.553l163.262,24.615l11.096,-3.816l3.772,-7.97l2.98,-21.063l35.197,-14.766l5.945,-23.616l32.966,-130.794l54.44,7.016l263.82,13.459l1.57,-32.247l6.444,-131.88l9.261,-69.47l13.533,-86.027l1.908,-9.1l-107.412,-17.57l-151.886,-28.724l-0.308,2.627l-107.251,-18.626' fill='none' id='svg_6' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined
+    <path d='m-945.443,-1335.983l-3.919,-0.66l4.918,-28.945l-97.27,-14.927l-159.269,-25.011l-29.855,-2.305l-6.708,112.432l-1.776,42.61l-3.038,73.316l-5.578,72.934l-6.311,73.037l-16.982,194.76l214.707,28.387l78.864,-185.719l22.589,-53.177l0.602,-17.775l2.407,-71.745l2.554,-76.12l4.065,-121.092' fill='none' id='svg_7' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined
+    <path d='m-931.866,-1765.514l-48.818,-4.8l-22.281,-3.097l-57.728,-10.01l-148.026,-16.498l-10.891,172.391l-10.656,184.661l287.891,40.159l16.821,-83.37l-0.029,-0.734l0.866,-104.213l-4.257,-0.44l-2.363,-164.069l-0.529,-9.98' fill='none' id='svg_8' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined
+    <path d='m-638.911,-2000.11l-228.49,-5.313l-51.93,-3.875l-11.801,66.079l-5.196,-1.13l-2.025,0.059l-15.705,83.81l-17.452,68.252l152.972,14.971l85.219,-0.572l30.075,-70.806l34.801,-81.961l29.532,-69.514' fill='none' id='svg_9' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined,
+    <path d='m550.066,604.469l-275.605,-102.333l25.539,-68.795l275.033,102.113l-24.967,69.015' fill='none' id='svg_10' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined,
+    <path d='m367.533,-2367.481l-142.346,-52.855l8.601,-20.27l141.406,52.488l68.795,25.539l68.795,25.554l68.795,25.54l68.795,25.539l68.781,25.539l35.593,13.21l33.202,12.33l68.794,25.539l68.795,25.54l68.795,25.539l68.781,25.539l68.795,25.54l68.795,25.554l68.794,25.539l68.795,25.54l68.781,25.539l97.71,36.269l-7.662,20.637l-235.285,-87.348l-68.795,-25.539l-68.795,-25.554l-68.781,-25.54l-68.794,-25.539l-68.795,-25.539l-68.795,-25.54l-68.795,-25.539l-37.532,-13.929l-31.263,-11.625l-68.781,-25.54l-68.794,-25.539l-68.795,-25.539l-68.795,-25.54l-68.795,-25.539' fill='none' id='svg_11' stroke='#000' stroke-width='1px' transform='translate(-240, -240)'/>undefinedundefined</svg>
+  </g>
+ </g>
+ <g class='layer' id='cordinates-table'>
+  <title>Bảng tọa độ góc ranh</title>
+  <g class='layer' id='table' xmlns='http://www.w3.org/2000/svg'>
+   <text fill='#000' font-size='10px' font-weight='bold' id='svg_12' text-anchor='middle' x='760' y='705'>BẢNG LIỆT KÊ TỌA ĐỘ GÓC RANH</text>
+   <rect fill='none' height='15' id='header' stroke='#000' width='260' x='635' xmlns='http://www.w3.org/2000/svg' y='710'/>
+   <line fill='none' id='svg_13' stroke='#000' x1='635' x2='635' y1='725' y2='783'/>
+   <line fill='none' id='svg_14' stroke='#000' x1='675' x2='675' y1='710' y2='783'/>
+   <line fill='none' id='svg_15' stroke='#000' x1='745' x2='745' y1='710' y2='783'/>
+   <line fill='none' id='svg_16' stroke='#000' x1='825' x2='825' y1='710' y2='783'/>
+   <line fill='none' id='svg_17' stroke='#000' x1='895' x2='895' y1='725' y2='783'/>
+   <line fill='none' id='svg_18' stroke='#000' x1='635' x2='895' y1='783' y2='783'/>
+   <text fill='#000' font-size='10px' id='svg_19' text-anchor='middle' x='655' y='720'>
+    <tspan id='svg_20' x='655' y='720'>Điểm</tspan>
+    <tspan id='svg_21' x='710' y='720'>X (m)</tspan>
+    <tspan id='svg_22' x='785' y='720'>Y (m)</tspan>
+    <tspan id='svg_23' x='860' y='720'>Cạnh (m)</tspan>
+   </text>
+   <text font-size='10px' id='svg_24' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_25' text-anchor='start' x='645' y='737'>1</tspan>
+    <tspan id='svg_26' x='710' y='737'>552349.45</tspan>
+    <tspan id='svg_27' x='785' y='737'>1778453.53</tspan>
+    <tspan id='svg_28' x='860' y='737'>19.99</tspan>
+   </text>
+   <text font-size='10px' id='svg_29' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_30' text-anchor='start' x='645' y='749'>2</tspan>
+    <tspan id='svg_31' x='710' y='749'>552330.71</tspan>
+    <tspan id='svg_32' x='785' y='749'>1778460.49</tspan>
+    <tspan id='svg_33' x='860' y='749'>5.00</tspan>
+   </text>
+   <text font-size='10px' id='svg_34' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_35' text-anchor='start' x='645' y='761'>3</tspan>
+    <tspan id='svg_36' x='710' y='761'>552332.45</tspan>
+    <tspan id='svg_37' x='785' y='761'>1778465.18</tspan>
+    <tspan id='svg_38' x='860' y='761'>19.95</tspan>
+   </text>
+   <text font-size='10px' id='svg_39' text-anchor='middle' x='645' y='732'>
+    <tspan fill='#000' id='svg_40' text-anchor='start' x='645' y='773'>4</tspan>
+    <tspan id='svg_41' x='710' y='773'>552351.15</tspan>
+    <tspan id='svg_42' x='785' y='773'>1778458.23</tspan>
+    <tspan id='svg_43' x='860' y='773'>5.00</tspan>
+   </text>
+  </g>
+ </g>
+ <g class='layer' id='land-info' xmlns='http://www.w3.org/2000/svg'>
+  <title>Thông tin thửa đất</title>
+  <text fill='#4a84e3' font-size='10px' font-weight='bold' id='svg_44' text-anchor='right' x='40' y='40'>LÔ ĐẤT SỐ : 315, TỜ BẢN ĐỒ SỐ : 22,
+        PHƯỜNG: AN HẢI BẮC,
+        QUẬN: SƠN TRÀ,
+        THÀNH PHỐ : ĐÀ NẴNG</text>
+ </g>
+ <g class='layer' id='main-land'>
+  <title>Thửa chính</title>
+  <path d='m575.033,535.454l-275.033,-102.113l25.539,-68.795l274.461,101.908l-24.967,69' fill='none' id='svg_45' stroke='#000' stroke-width='1px'/>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_46' stroke='#000' stroke-width='0' text-anchor='middle' x='435' xml:space='preserve' y='453'>ODT</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_47' stroke='#000' stroke-width='0' text-anchor='middle' x='465' xml:space='preserve' y='445'>315 (22)</text>
+  <line fill='none' id='svg_48' stroke='#000' x1='450' x2='480' y1='450' y2='450'/>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_49' stroke='#000' stroke-width='0' text-anchor='middle' x='465' xml:space='preserve' y='461'>99.8</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_50' stroke='#000' stroke-width='0' text-anchor='middle' x='582.93096' xml:space='preserve' y='541.588'>1</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_51' stroke='#000' stroke-width='0' text-anchor='middle' x='290.05058' xml:space='preserve' y='432.33612'>2</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_52' stroke='#000' stroke-width='0' text-anchor='middle' x='317.01281' xml:space='preserve' y='359.32106'>3</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_53' stroke='#000' stroke-width='0' text-anchor='middle' x='609.92654' xml:space='preserve' y='467.66369'>4</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_54' stroke='#000' stroke-width='0' text-anchor='middle' x='433.51651' xml:space='preserve' y='480.39748'>19.99</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_55' stroke='#000' stroke-width='0' text-anchor='middle' x='308.7697' xml:space='preserve' y='394.9432'>5.00</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_56' stroke='#000' stroke-width='0' text-anchor='middle' x='458.7697' xml:space='preserve' y='411.49978'>19.95</text>
+  <text fill='#000' font-family='serif' font-size='10px' id='svg_57' stroke='#000' stroke-width='0' text-anchor='middle' x='583.51651' xml:space='preserve' y='496.95406'>5.00</text>
+  <circle cx='575.03303' cy='535.45428' fill='#000' id='svg_58' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='300' cy='433.34067' fill='#000' id='svg_59' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='325.53941' cy='364.54572' fill='#000' id='svg_60' r='2' stroke='#000' stroke-width='1px'/>
+  <circle cx='600' cy='466.45384' fill='#000' id='svg_61' r='2' stroke='#000' stroke-width='1px'/>
+  <text fill='#000' font-family='serif' font-size='35px' font-weight='bold' id='svg_62' text-anchor='middle' x='800' xml:space='preserve' y='325'>B</text>
+  <line id='svg_63' marker-end='url(#arrow)' stroke='#000' stroke-width='2' x1='800' x2='800' y1='400' y2='250'/>
+ </g>
+</svg>
