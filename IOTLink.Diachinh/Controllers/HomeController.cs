@@ -32,167 +32,12 @@ namespace IOTLink.Diachinh.Controllers
                 Genre = "Xã",
                 ListHuyenXaNguoiDungs = new List<ListHuyenXaNguoiDung>()
             };
-            //if (ui != null && ui.UserInfo != null)
-            //{
-            //    if (ui != null)
-            //    {
-            //        foreach (DictionaryEntry s in ui.UserInfo.ToChucKVHC)
-            //        {
-            //            if (s.Value.GetType() == typeof(SSOHcHuyen))
-            //            {
-            //                var sHuyen = (SSOHcHuyen)s.Value;
-            //                ListHuyenXaNguoiDung HuyenXaNguoiDungModel = new ListHuyenXaNguoiDung()
-            //                {
-            //                    Id = sHuyen.HUYENID,
-            //                    Code = sHuyen.MAHUYEN,
-            //                    NameKVHC = sHuyen.TENKVHC,
-            //                    Name = sHuyen.TENKVHC.Replace(sHuyen.PHANLOAI, "").Trim(),
-            //                    MaKVHC = sHuyen.MAKVHC,
-            //                };
-            //                HuyenND.ListHuyenXaNguoiDungs.Add(HuyenXaNguoiDungModel);
-
-            //            }
-            //            else if (s.Value.GetType() == typeof(SSOHcXa))
-            //            {
-            //                var sXa = (SSOHcXa)s.Value;
-            //                ListHuyenXaNguoiDung HuyenXaNguoiDungModel = new ListHuyenXaNguoiDung()
-            //                {
-            //                    Id = sXa.ID,
-            //                    Code = sXa.MAXA,
-            //                    NameKVHC = sXa.TENKVHC,
-            //                    Name = sXa.TENKVHC.Replace((sXa.PHANLOAI != null ? sXa.PHANLOAI : "$"), "").Replace("Thị Xã", "").Replace("Phường", "").Replace("Thị Trấn", "").Trim(),
-            //                    MaKVHC = sXa.MAKVHC
-            //                };
-            //                XaNguoiDung.ListHuyenXaNguoiDungs.Add(HuyenXaNguoiDungModel);
-            //            }
-            //        }
-            //    }
-            //}
-            //if (HuyenND.ListHuyenXaNguoiDungs.Count > 0)
-            //{
-            //    HuyenND.ListHuyenXaNguoiDungs = HuyenND.ListHuyenXaNguoiDungs.OrderBy(x => x.Name).ToList();
-            //    ViewBag.HuyenNguoiDung = HuyenND;
-            //}
-            //else
-            //{
+            
             XaNguoiDung.ListHuyenXaNguoiDungs = XaNguoiDung.ListHuyenXaNguoiDungs.OrderBy(x => x.Name).ToList();
             ViewBag.HuyenNguoiDung = XaNguoiDung;
-            //}
             ViewBag.BanDoXaID = "20272";
             return View();
         }
-        //[HttpPost]
-        //public ActionResult ExportFileShape(ExportFileViewModel exportFile)
-        //{
-        //    try
-        //    {
-        //        CheckFolder();
-        //        string IdGui = Guid.NewGuid().ToString();
-        //        //string filePath = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document", "ThuaDat_" + IdGui + ".json");
-        //        string filePath = Path.Combine(Server.MapPath("~/Document"), "ThuaDat_" + IdGui + ".json");
-        //        System.IO.File.WriteAllText(filePath, exportFile.shapeJson);
-        //        bool check = false;
-        //        if (exportFile.category == "SHP")
-        //        {
-        //            //string filePathShape = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document\\ShapeFile", "ThuaDat_" + IdGui + ".shp");
-        //            //string filePathZip = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document\\ShapeFile", "ThuaDat_" + IdGui + ".zip");
-        //            string filePathShape = Path.Combine(Server.MapPath("~/Document/ShapeFile"), "ThuaDat_" + IdGui + ".shp");
-        //            string filePathZip = Path.Combine(Server.MapPath("~/Document/ShapeFile"), "ThuaDat_" + IdGui + ".zip");
-        //            check = gdalUtilities.convertJsonToShapeFile(filePath, filePathShape);
-        //            if (check)
-        //            {
-        //                string filesPathName = filePathShape.Substring(0, filePathShape.Length - 4);
-        //                gdalUtilities.removeShapeFileIfExists(filesPathName);
-        //                if (System.IO.File.Exists(filePath))
-        //                {
-        //                    System.IO.File.Delete(filePath);
-        //                }
-        //                return Json(new { code = "ok", result = "ThuaDat_" + IdGui + ".zip" });
-        //            }
-        //        }
-        //        if (exportFile.category == "KML")
-        //        {
-        //            //string filePathKML = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document\\KML", "ThuaDat_" + IdGui + ".KML");
-        //            string filePathKML = Path.Combine(Server.MapPath("~/Document/KML"), "ThuaDat_" + IdGui + ".KML");
-        //            dynamic json = JsonConvert.DeserializeObject(exportFile.shapeJson);
-        //            check = gdalUtilities.ConvertJsonToKML(json, filePathKML);
-        //            if (check)
-        //            {
-        //                if (System.IO.File.Exists(filePathKML))
-        //                {
-        //                    System.IO.File.Delete(filePathKML);
-        //                }
-        //                if (System.IO.File.Exists(filePath))
-        //                {
-        //                    System.IO.File.Delete(filePath);
-        //                }
-        //            }
-        //            return Json(new { code = "ok", result = "ThuaDat_" + IdGui + ".zip" });
-        //        }
-
-        //        return Json(true);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        return Json(new { code = "fail", result = ex.Message.ToString() });
-        //        throw;
-        //    }
-
-        //}
-        //public ActionResult DownloadFile(string filePath, string type)
-        //{
-        //    try
-        //    {
-        //        if (type == "SHP")
-        //        {
-        //            //string filePathZip = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document\\ShapeFile", filePath);
-        //            string filePathZip = Path.Combine(Server.MapPath("~/Document/ShapeFile"), filePath);
-        //            byte[] finalResult = System.IO.File.ReadAllBytes(filePathZip);
-        //            if (System.IO.File.Exists(filePathZip))
-        //            {
-        //                System.IO.File.Delete(filePathZip);
-        //            }
-        //            return File(finalResult, "application/zip", Path.GetFileName(filePathZip));
-        //        }
-        //        if (type == "KML")
-        //        {
-        //            string filePathZip = Path.Combine(Server.MapPath("~/Document/KML"), filePath);
-        //            //string filePathZip = Path.Combine(_hostingEnvironment.WebRootPath + "\\Document\\KML", filePath);
-        //            byte[] finalResult = System.IO.File.ReadAllBytes(filePathZip);
-        //            if (System.IO.File.Exists(filePathZip))
-        //            {
-        //                System.IO.File.Delete(filePathZip);
-        //            }
-        //            return File(finalResult, "application/zip", Path.GetFileName(filePathZip));
-        //        }
-        //        byte[] s1 = new byte[] { };
-        //        return File(s1, "application/zip", filePath);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        byte[] s = new byte[] { };
-        //        return File(s, "application/zip", filePath);
-        //    }
-
-        //}
-        //private void CheckFolder()
-        //{
-        //    string document = Server.MapPath("~/Document");
-        //    if (!(Directory.Exists(document)))
-        //    {
-        //        Directory.CreateDirectory(document);
-        //    }
-        //    string shapfile = Server.MapPath("~/Document/ShapeFile");
-        //    if (!(Directory.Exists(shapfile)))
-        //    {
-        //        Directory.CreateDirectory(shapfile);
-        //    }
-        //    string filePathKML = Server.MapPath("~/Document/KML");
-        //    if (!(Directory.Exists(filePathKML)))
-        //    {
-        //        Directory.CreateDirectory(filePathKML);
-        //    }
-        //}
         [HttpPost]
         public ActionResult ExportFileShape(ExportFileViewModel exportFile)
         {
@@ -311,9 +156,17 @@ namespace IOTLink.Diachinh.Controllers
                     string[] role = { "Admin" };
                     serializeModel.roles = role;
                     string userData = JsonConvert.SerializeObject(serializeModel);
-                    FormsAuthenticationTicket authenticationTicket = new FormsAuthenticationTicket(1, model.Username, DateTime.Now, DateTime.Now.AddMinutes(1), false, userData);
+                    FormsAuthenticationTicket authenticationTicket = new FormsAuthenticationTicket(
+                        1, 
+                        model.Username, 
+                        DateTime.Now, 
+                        DateTime.Now.AddDays(1), 
+                        false, 
+                        userData
+                        );
                     string encTicket = FormsAuthentication.Encrypt(authenticationTicket);
-                    HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+                    HttpCookie faCookie = new HttpCookie("DIACHINH_IOTLINK", encTicket);
+                    faCookie.Expires = DateTime.Now.AddDays(1);
                     Response.Cookies.Add(faCookie);
                     if (string.IsNullOrEmpty(returnUrl))
                     {
@@ -352,6 +205,12 @@ namespace IOTLink.Diachinh.Controllers
         [AllowAnonymous]
         public ActionResult LogOut()
         {
+            if (this.ControllerContext.HttpContext.Request.Cookies.AllKeys.Contains("DIACHINH_IOTLINK"))
+            {
+                HttpCookie cookie = this.ControllerContext.HttpContext.Request.Cookies["DIACHINH_IOTLINK"];
+                cookie.Expires = DateTime.Now.AddDays(-10);
+                this.ControllerContext.HttpContext.Response.Cookies.Add(cookie);
+            }
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }

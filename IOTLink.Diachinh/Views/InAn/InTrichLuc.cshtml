@@ -1,0 +1,214 @@
+﻿
+@{
+    Layout = null;
+}
+@model IOTLink.Diachinh.Models.Intrichluc
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>In trích lục thửa đất</title>
+</head>
+
+<style>
+    .head1 {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 16pt;
+    }
+
+    table, th, td {
+        /*border: 1px solid black;*/
+        /*border-collapse: collapse;*/
+    }
+
+    th, td {
+        padding: 5px;
+        margin-bottom: .0001pt;
+        font-size: 14.0pt;
+        font-family: "Times New Roman","serif";
+        margin-top: 6.0pt;
+        margin-right: 0in;
+        margin-bottom: 6.0pt;
+        margin-left: 0in;
+        text-align: left;
+        /*text-indent: 34.0pt;*/
+    }
+
+    .divcenterBold {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .divcenteritalic {
+        text-align: center;
+        font-style: italic;
+    }
+    /*chữ nghiêng*/
+    p.italic {
+        font-style: italic;
+    }
+
+    .divcenterNomal {
+        text-align: center;
+    }
+
+    .divcenter {
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="head1">
+        <strong>TRÍCH LỤC BẢN ĐỒ ĐỊA CHÍNH</strong>
+    </div>
+    <div>
+        <table style="width:100%" border="0">
+            <tr>
+                <td colspan="2">1. Số thứ tự thửa đất: @Model.SOTHUTHUTHUA  ; Số tờ bản đồ : @Model.SOTOBANDO ;</td>
+            </tr>
+            <p class="MsoNormal" style="margin-top: 6.0pt; margin-right: 0in; margin-bottom: 6.0pt; margin-left: 0in; text-indent: 34.0pt; tab-stops: center 219.7pt right 439.4pt">
+                <b style="mso-bidi-font-weight: normal"><span style="font-size: 14.0pt"><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><i style="mso-bidi-font-style: normal">
+                    <span style="font-size: 14.0pt">
+                        <span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                        <o:p></o:p>
+                    </span>
+                </i>
+            </p>
+            <tr>
+                <td colspan="2" align="left">
+                    Xã (phường, thị trấn): @Model.XA ;Huyện (quận, thị xã, thành phố): @Model.HUYEN ;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    Tỉnh (thành phố): @Model.TINH
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    2. Diện tích:
+                    @Model.DIENTICH m²
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    3. Mục đích sử dụng đất: @Model.MUCDICHSUDUNG
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div style="text-align:left">
+                        4. Tên người sử dụng đất: @Model.TENCHU; Địa chỉ thường trú: @Model.DIACHI
+                    </div>
+
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">5. Các thay đổi của thửa đất so với giấy tờ pháp lý về quyền sử dụng đất</td>
+
+            </tr>
+            <tr>
+                <td colspan="2">
+                    6. Bản vẽ thửa đất:
+                </td>
+            </tr>
+            <tr>
+                <td width="50%">
+                    6.1. Sơ đồ thửa đất
+                </td>
+                <td width="50%">
+                    6.2. Chiều dài cạnh thửa
+                </td>
+            </tr>
+
+            <tr>
+                <td valign="top" align="center" width="50%">
+                    <div style="position:relative; width:116mm">
+                        <div style="width: 90%; float:left">
+                            <img ID="imgMap" style="max-width: 100%; max-height: 100%;" src="@Model.ANHSODO" />
+                        </div>
+                        <div style="width: 10%; height:200px; vertical-align:central; text-align: center;float:right; margin: auto;">
+                            <img style="position: center !important;float:left;margin-top:100px " src="@Model.ANHMUITEN" />
+                        </div>
+                    </div>
+                </td>
+                <td width="50%">
+                    @*<img ID="imgMap" src="@Model.ANHSODO" BorderStyle="Solid" BorderWidth="1" />*@
+                    <table id="table_bangtoado" class="bordered">
+                        <thead>
+                            <tr>
+                                <th class="t50">Đỉnh</th>
+                                <th class="t100">Độ dài cạnh</th>
+                                
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @{
+                                if (Model != null)
+                                {
+                                    if (Model.DsDinhInTrichLuc != null)
+                                    {
+                                        foreach (var item in Model.DsDinhInTrichLuc)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @item.Diem
+                                                </td>
+                                                <td>
+                                                    @item.DoDaiCanh
+                                                </td>
+                                                
+                                            </tr>
+                                        }
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </td>
+
+            </tr>
+            <tr>
+                <td width="40%">
+                    <div class="divcenterNomal">
+                        Người trích lục
+                    </div>
+
+                </td>
+                <td width="60%">
+                    <div class="divcenterNomal">
+                        ………, ngày …… tháng……. năm……
+                    </div>
+                    <div class="divcenterBold">
+                        Giám đốc
+                    </div>
+                    <div class="divcenterBold">
+                        Văn phòng đăng ký quyền sử dụng đất….
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="divcenteritalic">
+                    (Ký, ghi rõ họ và tên)
+                </td>
+                <td class="divcenteritalic">
+                    (Ký, ghi rõ họ và  tên, đóng dấu)
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

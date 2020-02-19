@@ -69,6 +69,7 @@
     </div>
     @Html.Partial("_ChuGiai")
     @Html.Partial("_ToolRule")
+    @Html.Partial("_ChangeTile")
 </div>
 <div id="loading-map" class="loading-map" style="display: none;">
     <img src="~/Content/Map/images/loading.gif" />
@@ -101,20 +102,20 @@
     <script src="~/Content/Map/js/Problem.js"></script>
     <script src="~/Content/Map/js/sweetalert.min.js"></script>
     <script src="~/Content/Map/js/toolTachThua.js"></script>
-    <script src="~/Content/Map/SDK/fiolissdk@1.3.7.prod.js"></script>
+    <script src="~/Content/Map/SDK/fiolissdk@1.3.8.prod.js"></script>
     <script src="~/Content/Map/js/jquery.nicescroll.min.js"></script>
     <script src="~/Content/Map/js/mask/inputmask.js"></script>
     <script src="~/Content/Map/js/mask/jquery.inputmask.js"></script>
     @*<script src="~/Content/Map/js/MapIOTLink.js"></script>*@
     <script src="~/Content/Map/js/ToolShape.js"></script>
-        <script src="~/Content/Map/js/ThuaDat.js"></script>
-        <script src="~/Content/Map/js/UpdateThuaDat.js"></script>
-        <script src="~/Content/Map/js/MenuLeft.js"></script>
-        <script src="~/Content/Map/js/ImportFile.js"></script>
-        <script src="~/Content/Map/js/Mode3D.js"></script>
-        <script src="~/Content/Map/js/MapControl.js"></script>
-        <script src="~/Content/Map/js/TachThua.js"></script>
-        <script src="~/Content/Map/js/HopThua.js"></script>
+    <script src="~/Content/Map/js/ThuaDat.js"></script>
+    <script src="~/Content/Map/js/UpdateThuaDat.js"></script>
+    <script src="~/Content/Map/js/MenuLeft.js"></script>
+    <script src="~/Content/Map/js/ImportFile.js"></script>
+    <script src="~/Content/Map/js/Mode3D.js"></script>
+    <script src="~/Content/Map/js/MapControl.js"></script>
+    <script src="~/Content/Map/js/TachThua.js"></script>
+    <script src="~/Content/Map/js/HopThua.js"></script>
     <script src="~/Content/Map/js/EditShape.js"></script>
     <script src="~/Content/Map/js/sweetalert.min.js"></script>
     <script src="~/Content/Map/js/ChuGiai.js"></script>
@@ -147,6 +148,18 @@
         function GetAllShapOnWardLatLng() {
             ViewMap.showThuaDatSelectSubdistrict();
         }
+        $(".change-tile-map .item-map").hover(function () {
+            $(".change-tile-map .item-map").show();
+        },function() { 
+            $(".change-tile-map .item-map").hide();
+            $(".change-tile-map .item-map.item-active").show();
+            });
+        $(".change-tile-map .item-map").click(function () {
+            $(".change-tile-map .item-map").removeClass("item-active");
+            $(this).addClass("item-active");
+            var urlTile = $(this).attr("data-url");
+            map.setTileUrl("http://"+urlTile+"/all/2d/{z}/{x}/{y}.png",false);
+        });
     </script>
     @Html.Partial("_TachThua")
     @Html.Partial("_InforHopThua")

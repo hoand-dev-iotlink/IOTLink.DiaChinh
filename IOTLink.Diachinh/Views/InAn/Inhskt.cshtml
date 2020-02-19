@@ -1,0 +1,196 @@
+﻿
+@{
+    Layout = null;
+}
+@model IOTLink.Diachinh.Models.Intrichluc
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>In hồ sơ kỹ thuật</title>
+</head>
+
+<style>
+    .head1 {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 16pt;
+    }
+
+    table, th, td {
+        /*border: 1px solid black;*/
+        /*border-collapse: collapse;*/
+    }
+
+    th, td {
+        padding: 3px;
+        margin-bottom: .0001pt;
+        font-size: 14.0pt;
+        font-family: "Times New Roman","serif";
+        margin-top: 6.0pt;
+        margin-right: 0in;
+        margin-bottom: 6.0pt;
+        margin-left: 0in;
+        text-align: left;
+        /*text-indent: 34.0pt;*/
+    }
+
+    .divcenterBold {
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .divcenteritalic {
+        text-align: center;
+        font-style: italic;
+    }
+    /*chữ nghiêng*/
+    p.italic {
+        font-style: italic;
+    }
+
+    .divcenterNomal {
+        text-align: center;
+    }
+
+    .divcenter {
+        font-weight: bold;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="head1">
+        <strong>HỒ SƠ KỸ THUẬT THỬA ĐẤT</strong><br />
+        (PHỤC VỤ KÊ KHAI ĐẤT Ở, NHÀ Ở)
+    </div>
+    <p class="MsoNormal" style="margin-top: 6.0pt; margin-right: 0in; margin-bottom: 6.0pt; margin-left: 0in; text-indent: 34.0pt; tab-stops: center 219.7pt right 439.4pt">
+        <b style="mso-bidi-font-weight: normal"><span style="font-size: 14.0pt"><span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><i style="mso-bidi-font-style: normal">
+            <span style="font-size: 14.0pt">
+                <span style="mso-tab-count: 1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
+                <o:p></o:p>
+            </span>
+        </i>
+    </p>
+    <div>
+        <table style="width:100%" border="0">
+            <tr>
+                <td colspan="3">1. Số thứ tự thửa đất: @Model.SOTHUTHUTHUA  ; Số tờ bản đồ : @Model.SOTOBANDO ;Số hiệu mảnh bản đồ:@Model.SOMANH </td>
+            </tr>
+
+            <tr>
+                <td colspan="3" align="left">
+                    2. Tên chủ sử dụng: @Model.TENCHU;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    3. Mục đích sử dụng: @Model.MUCDICHSUDUNG
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    4. Diện tích hiện trạng là:
+                    @Model.DIENTICH m²
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    5. Địa chỉ thửa đất:  @Model.DIACHI;
+                </td>
+            </tr>
+
+
+
+            <tr>
+                <td colspan="2" width="50%">
+                    6. Sơ đồ thửa đất
+                </td>
+                <td width="50%">
+                    7. Bảng kê toạ độ cục bộ:
+                </td>
+            </tr>
+            <tr>
+                <td valign="top" align="center" colspan="2" width="50%">
+                    <div style="position:relative; width:100%;height:100%">
+                        <div style="width: 90%; float:left">
+                            <img ID="imgMap" style="max-width: 100%; max-height: 100%;" src="@Model.ANHSODO" />
+                        </div>
+                        <div style="width: 10%; height:200px; vertical-align:central; text-align: center;float:right; margin: auto;">
+                            <img style="position: center !important;float:left;margin-top:100px " src="@Model.ANHMUITEN" />
+
+                        </div>
+                    </div>
+                </td>
+                <td width="50%" valign="top">
+                    <div style="position:relative; width:100%;height:100%;vertical-align:top">
+                        <div style="width: 90%; float:left">
+                            <table id="table_bangtoado" class="bordered">
+                                <thead>
+                                    <tr>
+                                        <th class="t50">Đỉnh</th>
+                                        <th class="t100">Tọa độ X</th>
+                                        <th class="t100">Tọa độ Y</th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{
+                                        if (Model != null)
+                                        {
+                                            if (Model.DsDinh != null)
+                                            {
+                                                foreach (var item in Model.DsDinh)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            @item.Diem
+                                                        </td>
+                                                        <td>
+                                                            @item.Toadox
+                                                        </td>
+                                                        <td>
+                                                            @item.Toadoy
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td width="50%" colspan="2">
+                    <div class="divcenterNomal">
+
+                    </div>
+
+                </td>
+                <td width="50%">
+                    <div style="text-align:left">
+                        8. Hồ sơ này chỉ có giá trị xác định diện tích hiện trạng thửa đất không xác định quyền sử dụng đất và mục đích sử dụng đất
+
+                    </div>
+                    <div style="text-align:left">
+                        9. Ranh giới do chủ sử dụng đất chỉ dẫn và chịu trách nhiệm
+                    </div>
+                    <div class="divcenterNomal">
+                        ………, ngày …… tháng……. năm……
+                    </div>
+                    <div class="divcenterBold">
+                        CƠ QUAN ĐO VẼ
+                    </div>
+
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

@@ -84,9 +84,6 @@
     <Reference Include="FTILIS.Libraries.Services.XuLyHoSo">
       <HintPath>..\packages\Module\FTILIS.Libraries.Services.XuLyHoSo.dll</HintPath>
     </Reference>
-    <Reference Include="FTILIS.Modules.WebGIS">
-      <HintPath>..\packages\Module\FTILIS.Modules.WebGIS.dll</HintPath>
-    </Reference>
     <Reference Include="FTILIS.Services.Library">
       <HintPath>..\packages\Module\FTILIS.Services.Library.dll</HintPath>
     </Reference>
@@ -245,6 +242,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InAnController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="CustomAuthorizeAttribute\BaseViewPage.cs" />
     <Compile Include="CustomAuthorizeAttribute\CustomAuthorizeAttribute.cs" />
     <Compile Include="CustomAuthorizeAttribute\CustomPrincipal.cs" />
@@ -253,12 +252,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ExportFileViewModel.cs" />
+    <Compile Include="Models\InAnViewModel.cs" />
     <Compile Include="Models\ListHuyenXaNguoiDungModel.cs" />
     <Compile Include="Models\Login\CustomPrincipalSerializeModel.cs" />
     <Compile Include="Models\Login\LoginViewModel.cs" />
     <Compile Include="Models\ShapeJsonViewModel.cs" />
     <Compile Include="Models\TrichLucModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sevice\FileManager.cs" />
     <Compile Include="Sevice\GdalUtilities.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -1587,11 +1588,15 @@
     <Content Include="Content\Map\lib\jquery\dist\jquery.min.js" />
     <Content Include="Content\Map\lib\jquery\LICENSE.txt" />
     <Content Include="Content\Map\SDK\fiolissdk%401.3.7.prod.js" />
+    <Content Include="Content\Map\SDK\fiolissdk%401.3.8.prod.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="GdalConfiguration.vb" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\1.JPG" />
+    <Content Include="images\2.JPG" />
+    <Content Include="images\Bac.png" />
     <Content Include="images\btn-down.png" />
     <Content Include="images\btn-left.png" />
     <Content Include="images\btn-right.png" />
@@ -1991,6 +1996,9 @@
     <Content Include="Views\Shared\_LayoutMapIOT.cshtml" />
     <Content Include="Views\Home\_EditThuaDat.cshtml" />
     <Content Include="Views\Home\_MenuPartial.cshtml" />
+    <Content Include="Views\Home\_ChangeTile.cshtml" />
+    <Content Include="Views\InAn\InTrichLuc.cshtml" />
+    <Content Include="Views\InAn\Inhskt.cshtml" />
     <Content Include="Views\Home\AccessDenied.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
@@ -1998,7 +2006,6 @@
     <Folder Include="App_Data\FileServer\TKKK\" />
     <Folder Include="App_Data\UploadedFiles\" />
     <Folder Include="Views\InAnNew\" />
-    <Folder Include="Views\InAn\" />
     <Folder Include="Views\Services\" />
   </ItemGroup>
   <ItemGroup>

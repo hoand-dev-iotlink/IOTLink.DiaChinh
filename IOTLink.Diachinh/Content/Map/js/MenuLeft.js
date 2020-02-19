@@ -389,7 +389,7 @@ var MenuLeft = {
                     if ($("[data-code=" + ViewMap.CONSTS.codeDefault + "]").length > 0) {
                         MenuLeft.GLOBAL.checklistTo = true;
                     }
-                } else {
+                } else if (data.code != "code_not_found") {
                     swal({
                         title: "Thông báo",
                         text: "Lỗi! Không lấy được dữ liệu địa chính",

@@ -23,7 +23,7 @@ namespace IOTLink.Diachinh
 
         protected void Application_PostAuthenticateRequest(Object sender, EventArgs e)
         {
-            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            HttpCookie authCookie = Request.Cookies["DIACHINH_IOTLINK"];
             if (authCookie != null)
             {
                 FormsAuthenticationTicket authTicket = FormsAuthentication.Decrypt(authCookie.Value);
