@@ -192,7 +192,7 @@ namespace IOTLink.Diachinh.Controllers
                 {
                     return this.Json(new
                     {
-                        Message = "Đăng nhập không thành công! Vui lòng kiểm tra lại thông tin đăng nhập",
+                        Message = "Đăng nhập thất bại! Vui lòng kiểm tra lại thông tin đăng nhập",
 
                         Status = false,
                     }, JsonRequestBehavior.AllowGet);

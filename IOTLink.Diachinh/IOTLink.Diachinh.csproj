@@ -1614,6 +1614,7 @@
     <Content Include="images\loading.gif" />
     <Content Include="images\no_street_view_1x_080615.png" />
     <Content Include="images\out.png" />
+    <Content Include="images\Picture1.png" />
     <Content Include="images\Tool_Area.png" />
     <Content Include="images\Tool_Distance.png" />
     <Content Include="images\Tool_replay.png" />
