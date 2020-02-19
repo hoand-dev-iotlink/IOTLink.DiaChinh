@@ -706,6 +706,8 @@ var MenuLeft = {
                     }
                 }
                 html2 += `</ul>`;
+            } else {
+                html2 += `</a>`;
             }
             html2 += `</li>`;
         }

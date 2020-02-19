@@ -3,16 +3,21 @@ using IOTLink.Diachinh.Sevice;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace IOTLink.Diachinh.Controllers
 {
     public class HomeController : Controller
     {
         private GdalUtilities gdalUtilities = new GdalUtilities();
+
+        [CustomAuthorize]
+        //[Authorize]
         public ActionResult Index()
         {
 
@@ -70,8 +75,8 @@ namespace IOTLink.Diachinh.Controllers
             //}
             //else
             //{
-                XaNguoiDung.ListHuyenXaNguoiDungs = XaNguoiDung.ListHuyenXaNguoiDungs.OrderBy(x => x.Name).ToList();
-                ViewBag.HuyenNguoiDung = XaNguoiDung;
+            XaNguoiDung.ListHuyenXaNguoiDungs = XaNguoiDung.ListHuyenXaNguoiDungs.OrderBy(x => x.Name).ToList();
+            ViewBag.HuyenNguoiDung = XaNguoiDung;
             //}
             ViewBag.BanDoXaID = "20272";
             return View();
@@ -284,6 +289,78 @@ namespace IOTLink.Diachinh.Controllers
             }
 
         }
+
+        [HttpGet]
+        public ActionResult Login(string returnUrl)
+        {        
+            ViewBag.ReturnUrl = returnUrl;
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Login(LoginViewModel model, string returnUrl = "")
+        {
+            if (ModelState.IsValid)
+            {
+                var usernamedefault = ConfigurationManager.AppSettings["UserName"];
+                var passworddefault = ConfigurationManager.AppSettings["Password"];
+                if (model.Username.Equals(usernamedefault) && model.Password.Equals(passworddefault))
+                {
+                    CustomPrincipalSerializeModel serializeModel = new CustomPrincipalSerializeModel();
+                    serializeModel.UserName = model.Username;
+                    string[] role = { "Admin" };
+                    serializeModel.roles = role;
+                    string userData = JsonConvert.SerializeObject(serializeModel);
+                    FormsAuthenticationTicket authenticationTicket = new FormsAuthenticationTicket(1, model.Username, DateTime.Now, DateTime.Now.AddMinutes(1), false, userData);
+                    string encTicket = FormsAuthentication.Encrypt(authenticationTicket);
+                    HttpCookie faCookie = new HttpCookie(FormsAuthentication.FormsCookieName, encTicket);
+                    Response.Cookies.Add(faCookie);
+                    if (string.IsNullOrEmpty(returnUrl))
+                    {
+                        return this.Json(new
+                        {
+                            Message = "/Home/Index",
+
+                            Status = true,
+                        }, JsonRequestBehavior.AllowGet);
+                        //return RedirectToAction("Index");
+                    }
+                    else
+                    {
+                        return this.Json(new
+                        {
+                            Message = returnUrl,
+
+                            Status = true,
+                        }, JsonRequestBehavior.AllowGet);
+                    }
+                }
+                else
+                {
+                    return this.Json(new
+                    {
+                        Message = "Đăng nhập không thành công! Vui lòng kiểm tra lại thông tin đăng nhập",
+
+                        Status = false,
+                    }, JsonRequestBehavior.AllowGet);
+                }
+            }
+            //ModelState.AddModelError(string.Empty, "Đăng nhập không thành công! Vui lòng kiểm tra lại thông tin đăng nhập");
+            return View(model);
+        }
+
+        [AllowAnonymous]
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login");
+        }
+
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
+
         private void CheckFolder()
         {
             string document = Server.MapPath("~/Document");
@@ -301,6 +378,16 @@ namespace IOTLink.Diachinh.Controllers
             {
                 Directory.CreateDirectory(filePathKML);
             }
+        }
+
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
     }
 }

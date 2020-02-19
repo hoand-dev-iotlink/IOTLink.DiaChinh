@@ -1,0 +1,93 @@
+﻿@model  IOTLink.Diachinh.Models.LoginViewModel
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <h4>User Login</h4>
+    <hr />
+    @Html.ValidationSummary(true)
+    @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })*@
+    <div class="form-group">
+        @Html.LabelFor(model => model.Username, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Username)
+            @Html.ValidationMessageFor(model => model.Username)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Login" id="submit-form" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+@section Scripts{
+    <script src="~/Content/Map/js/sweetalert.min.js"></script>
+    <script>
+        $(document).on('keyup', '#Username , #Password', function (e) {
+            if (e.keyCode == 13) {
+                $('#submit-form').click();
+            }
+        });
+
+        $(document).on('click', '#submit-form', function () {
+            let username = $('#Username').val();
+            let password = $('#Password').val();
+            if (username.trim() == null || username.trim() == "" || password.trim() == null || password.trim() == "") {
+                 swal({
+                      title: "Thông báo",
+                      text: "Đăng nhập không thành công! Thông tin đăng nhập không hợp lệ",
+                      icon: "warning",
+                      button: "Đóng",
+                 }).then((value) => {
+
+                 });
+                return;
+            }
+            var user = {
+                Username : username,
+                Password : password
+            };
+            $.ajax({
+                type: "POST",
+                url: "@Url.Action("Login", "Home")",
+                data: {
+                    model: user,
+                    returnUrl: window.location.search.replace('?returnUrl=', '').replace(/%2F/g, '/') + window.location.hash
+                },
+                success: function (result) {
+                    if (!result.Status) {
+                        swal({
+                            title: "Thông báo",
+                            text: result.Message,
+                            icon: "error",
+                            button: "Đóng",
+                        }).then((value) => {
+
+                        });
+                        return;
+                    } else {
+                        window.location.href = window.location.origin + result.Message
+                    }
+                },
+                error: function(error) {
+                   console.log("ERROR:" + error);
+                }
+            })
+        })
+    </script>
+
+
+}
