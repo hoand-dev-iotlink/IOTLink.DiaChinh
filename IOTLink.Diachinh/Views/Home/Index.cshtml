@@ -158,7 +158,16 @@
             $(".change-tile-map .item-map").removeClass("item-active");
             $(this).addClass("item-active");
             var urlTile = $(this).attr("data-url");
-            map.setTileUrl("http://"+urlTile+"/all/2d/{z}/{x}/{y}.png",false);
+            urlTile = encodeURIComponent(urlTile);
+            if ($(this).hasClass("map-dia-chinh")) {
+                map.data.setMinZoom(22);
+                map.setMaxNativeZoom(21);
+            }
+            else {
+                map.data.setMinZoom(12);
+                map.setMaxNativeZoom(18);
+            }
+            map.setTileUrl(urlTile,false);
         });
     </script>
     @Html.Partial("_TachThua")
